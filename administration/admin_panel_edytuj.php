@@ -89,7 +89,7 @@ if(!$_SESSION['username'])
 
 					if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 						file_put_contents ($folder.$nazwa, $tresc);
-						echo '<div class="n_ok"><p>Zapisano zmiany!</p></div>';
+						echo '<div class="n_ok"><p>'.$lang['PLK_ZAP_OK'].'</p></div>';
 					}
 				?>
 				</div>
