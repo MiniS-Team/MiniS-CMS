@@ -39,6 +39,8 @@ button, .button{
 	display: inline-block;
 	font: 700 11px Tahoma, Arial, sans-serif;
 	padding: 7px 12px 7px 12px;
+	margin-left: 10%;
+	margin-right: 10%;
 	position: relative;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #FFFFFF;
@@ -56,13 +58,8 @@ button:hover, .button:hover{
 	margin: 0 auto;
 	width: 900px;
 	background: #f3f3f3 url(../img/bg_top.jpg) repeat-x;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-khtml-border-radius: 5px;
 	border-radius: 5px;
 	behaviour: url('../../js/border-radius.htc');
-	-moz-box-shadow: 0px 0px 15px #888;
-	-webkit-box-shadow: 0px 0px 15px #888;
 	box-shadow: 0px 0px 15px #888;
 }
 
