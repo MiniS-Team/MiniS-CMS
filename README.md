@@ -1,7 +1,7 @@
 MiniS CMS
 ========
 http://Kucharskov.cba.pl  
-http://Kucharskov.cba.pl/MiniS%20CMS/
+http://Kucharskov.cba.pl/MiniS_CMS/
 
 **MiniS CMS:** M.Kucharskov & MiniS Team  
 **Korekta styli:** freaks
