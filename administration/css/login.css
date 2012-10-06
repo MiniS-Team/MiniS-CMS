@@ -80,8 +80,6 @@ button:hover, .button:hover{
 	background: #ffffff;
 	border: 1px solid #DCDDE1;
 	border-radius: 5px;
-	-webkit-box-shadow:  2px 2px 0px 1px rgba(235, 235, 235, 1);
-	-moz-box-shadow:  2px 2px 0px 1px rgba(235, 235, 235, 1);
 	box-shadow:  2px 2px 0px 1px rgba(235, 235, 235, 1);
 	color: #848484;
 	margin: 0 0 5px 0;
