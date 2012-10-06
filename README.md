@@ -1,10 +1,11 @@
-MiniS CMS
+﻿MiniS CMS
 ========
 http://Kucharskov.cba.pl  
 http://Kucharskov.cba.pl/MiniS_CMS/
 
 **MiniS CMS:** M.Kucharskov & MiniS Team  
 **Korekta styli:** freaks
+**Styl panelu administratora:** kilab
 
 ## Wstęp
 Jako uczeń technikum informatycznego postanowiłem troszeczkę wyprzedzić plan nauczania (o niecałe 2 lata) i stworzyć podstawowy skrypt do zarządzania treścią. Nim właśnie jest MiniS CMS
