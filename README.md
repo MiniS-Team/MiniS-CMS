@@ -1,0 +1,4 @@
+MiniS-CMS
+=========
+
+Najmniejszy CMS
