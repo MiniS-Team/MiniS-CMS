@@ -1,8 +1,8 @@
 /*
 #
 # Styl kolorystyczny "Red" dla skryptu MiniS CMS 
-# Autor: M. Kucharskov
-# Korekta: Gosia Turek
+# M. Kucharskov & MiniS Team
+# Korekta: freaks
 # 
 */
 
@@ -46,26 +46,26 @@ p.header {
 	font-weight: bold;
 }
 
-ul, ul li {
+#panel_poziomo ul, #panel_poziomo ul li {
 	display: block;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-ul.menu_poziome {
+#panel_poziomo ul.menu_poziome {
 	text-align: center;
 	border-bottom: 1px solid #5f0000;
 	padding-bottom: 5px;
 }
 
-ul li {
+#panel_poziomo ul li {
 	display: inline;
 	white-space: nowrap;
 	margin-right: 5px;
 }
 
-ul a:link, ul a:visited {
+#panel_poziomo ul a:link, #panel_poziomo ul a:visited {
 	text-decoration: none;
 	background-color: #de4444;
 	color: #610000;
@@ -73,7 +73,7 @@ ul a:link, ul a:visited {
 	padding: 5px;
 }
 
-ul a:hover {
+#panel_poziomo ul a:hover {
 	background-color: #fff;
 	border-bottom-color: #fff;
 }

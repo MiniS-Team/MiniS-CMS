@@ -16,7 +16,7 @@ if(!$_SESSION['username'])
 	<title><?php echo $site_name ?> - <?php echo $lang['PA']  ?></title>
 	<meta http-equiv='Content-Language' content='<?php echo $site_lang ?>'>
 	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
-	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov">	
+	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
 	<link rel="stylesheet" type="text/css" href="css/admin.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/navi.css" media="screen">
@@ -95,15 +95,15 @@ if(!$_SESSION['username'])
 				</div>
 				<form action="admin_panel_edytuj.php" method="post">
 					<div class="element">
-						<label for="name" readonly="readonly"><?php echo $lang['ET_NS'] ?> <span class="red"><?php echo $lang['ET_WYM'] ?></span></label>
-						<input id="name" name="name" class="text err" readonly="readonly">
+						<label for="name" readonly="readonly"><?php echo $lang['ET_NS'] ?></label>
+						<input id="name" name="name" class="text" readonly="readonly">
 					</div>
 					<div class="element">
 						<label for="content"><?php echo $lang['ET_ZAW'] ?> <span><?php echo $lang['ET_WYM'] ?></span></label>
 						<textarea name="content" class="textarea" id="textarea" rows="25"></textarea>
 					</div>
 					<div class="entry">
-						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset" class="cancel"><?php echo $lang['ET_AN'] ?></button>
+						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset" class="cancel"><?php echo $lang['ET_COF'] ?></button>
 					</div>
 				</form>
 			</div>
@@ -115,7 +115,7 @@ if(!$_SESSION['username'])
 			<p>Design: <a href="http://kilab.pl" target="_blank">Paweł Balicki</a></p>
 		</div>
 		<div class="right">
-			<p><?php echo $lang['CMS'] ?>:<a href="http://kucharskov.cba.pl" target="_blank"> Kucharskov</a></p>
+			<p><?php echo $lang['CMS'] ?>: <a href="http://kucharskov.cba.pl" target="_blank">M. Kucharskov</a> & MiniS Team</p>
 		</div>
 	</div>
 </div>

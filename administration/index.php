@@ -5,7 +5,7 @@
 	<title><?php echo $site_name ?> - <?php echo $lang['PA'] ?></title>
 	<meta http-equiv='Content-Language' content='<?php echo $site_lang ?>'>
 	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
-	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov">	
+	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
 	<link rel='stylesheet' type='text/css' href='css/login.css'>
 </head>

@@ -2,7 +2,7 @@
 /*
 #
 # Language file "English" for MiniS CMS script
-# Author: M. Kucharskov
+# M. Kucharskov & MiniS Team
 #
 */
 
@@ -27,9 +27,9 @@ $lang['NO_PL'] = "File not found!";
 $lang['SK_INFO'] = "System info";
 $lang['WER_LOC'] = "Local version";
 $lang['WER'] = "Newest version";
-$lang['SK_ST'] = "State of the script";
+$lang['SK_ST'] = "Script status";
 $lang['SK_AK'] = "ACTUAL";
-$lang['SK_NAK'] = "UNACTUAL";
+$lang['SK_NAK'] = "OUT OF DATE";
 $lang['SK_ZM'] = "Change log";
 $lang['L_PLK'] = "Files list";
 $lang['PLK_ZAP_OK'] ="File saved successfully!";
@@ -38,6 +38,7 @@ $lang['ET_NS'] ="Page name";
 $lang['ET_ZAW'] ="Content";
 $lang['ET_ZAP'] ="Save";
 $lang['ET_AN'] ="Cancel";
+$lang['ET_COF'] ="Undo";
 $lang['ET_WYM'] ="(required)";
 $lang['ET_BD_NAZW'] = "The file name can contain only: letters, numbers and '_' character!";
 $lang['ET_BD_NO_NAZW'] = "Enter the file name!";

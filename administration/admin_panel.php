@@ -16,7 +16,7 @@ if(!$_SESSION['username'])
 	<title><?php echo $site_name ?> - <?php echo $lang['PA']  ?></title>
 	<meta http-equiv='Content-Language' content='<?php echo $site_lang ?>'>
 	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
-	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov">	
+	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
 	<link rel="stylesheet" type="text/css" href="css/admin.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/navi.css" media="screen">
@@ -57,7 +57,7 @@ if(!$_SESSION['username'])
 				<div class="h_title">&#8250; <?php echo $lang['SK_INFO'] ?></div>
 				<p class="b1">
 				<?php
-				$version = file_get_contents('http://Kucharskov.cba.pl/MiniS%20CMS/.kucharskov/version.kucharskov');
+				$version = file_get_contents('http://Kucharskov.cba.pl/MiniS_CMS/.kucharskov/version.kucharskov');
 				$version_local = file_get_contents('../version.kucharskov');
 				
 				if(!$version) {
@@ -91,7 +91,7 @@ if(!$_SESSION['username'])
 			<div class="full_w">
 				<div class="h_title"><?php echo $lang['SK_ZM'] ?></div>
 				<?php
-				$changelog = file_get_contents('http://Kucharskov.cba.pl/MiniS%20CMS/.kucharskov/changelog.kucharskov');
+				$changelog = file_get_contents('http://Kucharskov.cba.pl/MiniS_CMS/.kucharskov/changelog.kucharskov');
 				
 				if(!$changelog) {
 				echo "<font style='color: #FF0000; font-weight: bold;'><p>".$lang['NO_PL']."</p></font>";
@@ -108,7 +108,7 @@ if(!$_SESSION['username'])
 			<p>Design: <a href="http://kilab.pl" target="_blank">Paweł Balicki</a></p>
 		</div>
 		<div class="right">
-			<p><?php echo $lang['CMS'] ?>:<a href="http://kucharskov.cba.pl" target="_blank"> Kucharskov</a></p>
+			<p><?php echo $lang['CMS'] ?>: <a href="http://kucharskov.cba.pl" target="_blank">M. Kucharskov</a> & MiniS Team</p>
 		</div>
 	</div>
 </div>

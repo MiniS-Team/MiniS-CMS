@@ -6,7 +6,7 @@
 	<title><?php echo $site_name ?></title>
 	<meta http-equiv='Content-Language' content='<?php echo $site_lang ?>'>
 	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
-	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov">
+	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">
 	<meta name="google-site-verification" content="<?php echo $site_gsv ?>">
 	<meta name='description' content="<?php echo $site_description ?>">
 	<meta name="keywords" content="<?php echo $site_keywords ?>">	
@@ -93,7 +93,7 @@
 	$version = file_get_contents('version.kucharskov');
 	echo " <b>".base64_decode($version)."</b>";
 	?>
-	by <a href='http://Kucharskov.cba.pl' target='_blank'>M. Kucharskov</a><br>
+	by <a href='http://Kucharskov.cba.pl' target='_blank'>M. Kucharskov</a> & MiniS Team<br>
 	<img src='img/MiniS_small.png'>
 	</div>
 	<!-- KONIEC STOPKI -->
