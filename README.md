@@ -42,4 +42,3 @@ Na dzień dzisiejszy skrypt nie posiada pełnego systemu aktualizacji jednak pos
 
 ## Postanowienia końcowe
 * Postaram się współpracować z użytkownikami aby skrypt był coraz lepszy
-* Użytkowników uprasza się o nie kopiowanie paczek instalacyjnych
