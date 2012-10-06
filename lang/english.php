@@ -30,6 +30,7 @@ $lang['WER'] = "Newest version";
 $lang['SK_ST'] = "Script status";
 $lang['SK_AK'] = "ACTUAL";
 $lang['SK_NAK'] = "OUT OF DATE";
+$lang['SK_PNW'] = "Download new version";
 $lang['SK_ZM'] = "Change log";
 $lang['L_PLK'] = "Files list";
 $lang['PLK_ZAP_OK'] ="File saved successfully!";

@@ -77,6 +77,10 @@ if(!$_SESSION['username'])
 				echo "<font style='color: #008000; font-weight: bold;'>".$lang['SK_AK']."</font><br>"; 
 				} else {
 				echo "<font style='color: #FF0000; font-weight: bold;'>".$lang['SK_NAK']."</font><br>";
+
+				echo "<form action='http://www.mediafire.com/?ap6bc8d7odakw' target='_blank'>";
+				echo "<input class='button' type='submit' value=".$lang['SK_PNW'].">";
+				echo "</form>";
 				}
 				?>
 				</p>
