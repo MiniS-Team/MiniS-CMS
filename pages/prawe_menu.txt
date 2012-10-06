@@ -1,0 +1,4 @@
+<p class="header">Panel Prawy</p>
+<a href='mailto:M.Kucharskov@onet.pl'>Kontakt</a> to jedna z mozliwości użycia tego panelu.<br>
+Może on zostać wyłączony,<br>
+lub użyty w zupełnie inny sposób
