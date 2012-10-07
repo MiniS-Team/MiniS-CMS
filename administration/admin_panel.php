@@ -40,11 +40,11 @@ if(!$_SESSION['username'])
 			<div class="right">
 				<div class="align-right">
 					<form action='logout.php'>
-					<input class='button' type='submit' value='<?php echo $lang['WYLOG'] ?>'>
+					<input class='button' type='submit' value='<?php echo $lang['LOGOUT'] ?>'>
 					</form>
 					<br>
 					<form action='../index.php' target='_blank'>
-					<input class='button' type='submit' value='<?php echo $lang['PODGL'] ?>'>
+					<input class='button' type='submit' value='<?php echo $lang['PVIEW'] ?>'>
 					</form>
 				</div>
 			</div>
@@ -68,15 +68,15 @@ if(!$_SESSION['username'])
 				$version_local = file_get_contents('../version.kucharskov');
 				
 				if(!$version) {
-				echo $lang['WER'].": <font style='color: #FF0000; font-weight: bold;'>".$lang['NO_PL']."</font><br>";
+				echo $lang['VER'].": <font style='color: #FF0000; font-weight: bold;'>".$lang['NO_FILE']."</font><br>";
 				} else {
-				echo $lang['WER'].": <b>".base64_decode($version)."</b><br>";
+				echo $lang['VER'].": <b>".base64_decode($version)."</b><br>";
 				}
 				
 				if(!$version_local) {
-				echo $lang['WER_LOC'].": <font style='color: #FF0000; font-weight: bold;'>".$lang['NO_PL']."</font><br>";
+				echo $lang['VER_LOC'].": <font style='color: #FF0000; font-weight: bold;'>".$lang['NO_FILE']."</font><br>";
 				} else {
-				echo $lang['WER_LOC'].": <b>".base64_decode($version_local)."</b><br>";
+				echo $lang['VER_LOC'].": <b>".base64_decode($version_local)."</b><br>";
 				}
 				
 				echo $lang['SK_ST'].": ";
@@ -86,7 +86,7 @@ if(!$_SESSION['username'])
 				echo "<font style='color: #FF0000; font-weight: bold;'>".$lang['SK_NAK']."</font><br>";
 
 				echo "<form action='http://www.mediafire.com/?ap6bc8d7odakw' target='_blank'>";
-				echo "<input class='button' type='submit' value=".$lang['SK_PNW'].">";
+				echo "<input class='button' id='pnw-button' type='submit' value=".$lang['SK_PNW'].">";
 				echo "</form>";
 				}
 				?>
@@ -105,7 +105,7 @@ if(!$_SESSION['username'])
 				$changelog = file_get_contents('http://Kucharskov.cba.pl/MiniS_CMS/.kucharskov/changelog.kucharskov');
 				
 				if(!$changelog) {
-				echo "<font style='color: #FF0000; font-weight: bold;'><p>".$lang['NO_PL']."</p></font>";
+				echo "<font style='color: #FF0000; font-weight: bold;'><p>".$lang['NO_FILE']."</p></font>";
 				} else {
 				echo $changelog;
 				}

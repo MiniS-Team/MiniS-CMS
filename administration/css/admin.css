@@ -39,12 +39,11 @@ button, .button{
 	display: inline-block;
 	font: 700 11px Tahoma, Arial, sans-serif;
 	padding: 7px 12px 7px 12px;
-	margin-left: 10%;
-	margin-right: 10%;
 	position: relative;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #FFFFFF;
 }
+
 button:hover, .button:hover{
 	border-bottom-color: #999999;
 	border-left-color: #999999;
@@ -52,6 +51,11 @@ button:hover, .button:hover{
 	border-top-color: #999999;
 	color: #333333;
 	text-decoration: none;
+}
+
+#pnw-button {
+	margin-left: 10%;
+	margin-right: 10%; 
 }
 
 .wrap{

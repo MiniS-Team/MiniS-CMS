@@ -18,7 +18,7 @@ header("Refresh:1; url=../index.php");
 ?>
 <html>
 <head>
-	<title><?php echo $site_name ?> - <?php echo $lang['PRZEK'] ?></title>
+	<title><?php echo $site_name ?> - <?php echo $lang['REDIR'] ?></title>
 	<meta http-equiv='Content-Language' content='<?php echo $site_lang ?>'>
 	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
@@ -29,7 +29,7 @@ header("Refresh:1; url=../index.php");
 <div id="space"></div>
 	<div id="log_box">
 		<div id="logout">
-		<?php echo $lang['PRZEK_'] ?>
+		<?php echo $lang['REDIR_'] ?>
 		</div>
 	</div>
 </body>

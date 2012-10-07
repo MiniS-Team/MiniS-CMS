@@ -41,11 +41,11 @@ if(!$_SESSION['username'])
 			<div class="right">
 				<div class="align-right">
 					<form action='logout.php'>
-					<input class='button' type='submit' value='<?php echo $lang['WYLOG'] ?>'>
+					<input class='button' type='submit' value='<?php echo $lang['LOGOUT'] ?>'>
 					</form>
 					<br>
 					<form action='../index.php' target='_blank'>
-					<input class='button' type='submit' value='<?php echo $lang['PODGL'] ?>'>
+					<input class='button' type='submit' value='<?php echo $lang['PVIEW'] ?>'>
 					</form>
 				</div>
 			</div>

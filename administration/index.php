@@ -27,10 +27,10 @@ require "../config.php";
 				<form action="login.php" method="post">
 					<label for="login"><?php echo $lang['LOG'] ?>:</label>
 					<input type="text" name="user" id="login" class="text">
-					<label for="pass"><?php echo $lang['HAS'] ?>:</label>
+					<label for="pass"><?php echo $lang['PASS'] ?>:</label>
 					<input id="pass" name="pass" type="password" class="text" />
 					<div class="sep"></div>
-					<button type="submit" class="ok"><?php echo $lang['ZALOG'] ?></button>
+					<button type="submit" class="ok"><?php echo $lang['LOGIN'] ?></button>
 				</form>
 			</div>
 			<div class="footer">&raquo; <?php echo $site_name ?> | <?php echo $lang['PA'] ?></div>
