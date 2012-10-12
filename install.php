@@ -1,3 +1,6 @@
+<?php
+require 'config.php';
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -83,7 +86,7 @@
 		padding: 5px 20px;
 		background: #EEEEEE;
 		border: 1px solid #DDDDDD;
-		height: 500px;
+		max-height: 500px;
 		width: 660px;
 		overflow: auto;
 	}
@@ -125,11 +128,11 @@
 	<div class="kontener">
 		<div id="text-div">
 			<ul id="text-div-nav">
-			  <li <?php if (!$_GET['step']) { echo "id='active'";} ?>>Licencja</li>
-			  <li <?php if ($_GET['step']==1) { echo "id='active'";} ?>>Wybór języka</li>
-			  <li <?php if ($_GET['step']==2) { echo "id='active'";} ?>>Test plików</li>
-			  <li <?php if ($_GET['step']==3) { echo "id='active'";} ?>>Konfiguracja</li>
-			  <li <?php if ($_GET['step']==4) { echo "id='active'";} ?>>Zakończenie</li>
+			  <li <?php if (!$_GET['step']) { echo "id='active'";} ?>><?php echo $lang['INSTAL_1'] ?></li>
+			  <li <?php if ($_GET['step']==1) { echo "id='active'";} ?>><?php echo $lang['INSTAL_2'] ?></li>
+			  <li <?php if ($_GET['step']==2) { echo "id='active'";} ?>><?php echo $lang['INSTAL_3'] ?></li>
+			  <li <?php if ($_GET['step']==3) { echo "id='active'";} ?>><?php echo $lang['INSTAL_4'] ?></li>
+			  <li <?php if ($_GET['step']==4) { echo "id='active'";} ?>><?php echo $lang['INSTAL_5'] ?></li>
 			</ul>
 
 <?php if (!$_GET['step']) {
@@ -823,9 +826,9 @@ Public License instead of this License.  But first, please read
 <div id='left'>
 </div>
 <div id='right'>
-<form action='install.php?step=1'>
-<input class='button' type='button' name='step' value='1'>
-</form>
+<a href='install.php?step=1'>
+<p class='button'>Akceptuję</p>
+</a>
 </div>
 <div style='clear: both'></div>
 ";
@@ -833,22 +836,39 @@ Public License instead of this License.  But first, please read
 echo "
 <div class='tab'>
 <div style='height: 50px;'></div>
-<div style='width: 200px; margin: 0 auto; text-align: center;'>
-<form action='install.php' method='post' id='formularz'>
-<label>Wybierz język</label>
-<select id='koltu' name='koltu'>
-	<option value='none'>-----</option>
-</select> 
+<div style='width: 200px; margin: 0 auto; text-align: center;'>";
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		file_put_contents ("config.php", "require 'lang/".$_POST['cms_lang']."';");
+		echo '<div class="n_ok"><p>OK!</p></div>';
+	}
+echo" <form action='install.php?step=1' method='post' id='formularz'>
+Wybierz język<br>
+<br>
+<select name='cms_lang'>
+<option value='none'>------------</option>";
+	$dir = opendir('lang/');
+	while($file = readdir($dir)) {
+		if($file !== '.' && $file !== '..' && $file !== '.htaccess') { 
+		echo '<option value='.$file.'>'.$file.'</option>\n';
+		} else {
+		}
+	}
+echo "</select><br>
+<br>
+<input class='button' type='submit' value='Zatwierdź'>
 </form>
+</div>
+<div style='height: 50px;'></div>
 </div>
 <br>
 <div id='left'>
 </div>
 <div id='right'>
-GUZIK
+<a href='install.php?step=2'>
+<p class='button'>Akceptuję</p>
+</a>
 </div>
 <div style='clear: both'></div>
-</div>
 ";
 } else if ($_GET['step'] == 2) {
 echo "STEP 2";

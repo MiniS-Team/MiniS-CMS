@@ -44,6 +44,12 @@ $lang['ET_WYM'] ="(required)";
 $lang['ET_BD_NAZW'] = "The file name can contain only: letters, numbers and '_' character!";
 $lang['ET_BD_NO_NAZW'] = "Enter the file name!";
 
+$lang['INSTAL_1'] = "License";
+$lang['INSTAL_2'] = "Select a language";
+$lang['INSTAL_3'] = "Test files";
+$lang['INSTAL_4'] = "Configuration";
+$lang['INSTAL_5'] = "Ending";
+
 GLOBAL $lang
 
 ?>

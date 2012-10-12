@@ -44,6 +44,12 @@ $lang['ET_WYM'] ="(wymagane)";
 $lang['ET_BD_NAZW'] = "Nazwa pliku może zawierać jedynie: litery, cyfry oraz znak '_'!";
 $lang['ET_BD_NO_NAZW'] = "Podaj nazwę pliku!";
 
+$lang['INSTAL_1'] = "Licencja";
+$lang['INSTAL_2'] = "Wybór języka";
+$lang['INSTAL_3'] = "Test plików";
+$lang['INSTAL_4'] = "Konfiguracja";
+$lang['INSTAL_5'] = "Zakończenie";
+
 GLOBAL $lang
 
 ?>
