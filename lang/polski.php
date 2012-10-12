@@ -49,6 +49,12 @@ $lang['INSTAL_2'] = "Wybór języka";
 $lang['INSTAL_3'] = "Test plików";
 $lang['INSTAL_4'] = "Konfiguracja";
 $lang['INSTAL_5'] = "Zakończenie";
+$lang['INSTAL_LANG'] = "Wybierz język";
+$lang['INSTAL_LANG_1'] = "Zapisano!";
+$lang['INSTAL_LANG_2'] = "Poczekaj na załadowanie języka!";
+$lang['INSTAL_ACC'] = "Akceptuję";
+$lang['INSTAL_SET'] = "Ustaw";
+$lang['INSTAL_NEXT'] = "Dalej";
 
 GLOBAL $lang
 

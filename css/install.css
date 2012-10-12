@@ -1,0 +1,126 @@
+/*
+#
+# Styl instalatora dla skryptu MiniS CMS 
+# M. Kucharskov & MiniS Team
+# 
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+	
+a {
+	color: #336699;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #666666;
+	text-decoration: none;
+}
+
+a.side {
+	color: #336699;
+	text-decoration: none;
+}
+
+a:hover.side {
+	color: #336699;
+	text-decoration: underline;
+}
+
+a.white {
+	color: #336699;
+	text-decoration: none;
+}
+
+a:hover.white {
+	color: #336699;
+	text-decoration: none;
+}
+	
+.kontener {
+	text-align: center;
+    margin: 0 auto;
+	border: 1px solid #000;
+	width: 735px;
+}
+	
+#text-div {
+	padding: 15px;
+	text-align: left;
+}
+	
+#text-div ul#text-div-nav{
+	margin: 0;
+	padding: 0;
+}
+	
+#text-div ul#text-div-nav li{
+	display: inline;
+	color: #777777;
+	padding: 5px 10px;
+	background: #d9d9d9;
+	border: 1px solid #999999;
+	text-decoration: none
+}
+	
+ul#text-div-nav li#active{
+	color: #000000;
+	background: #c7c7c7;
+	border: 1px solid #777777;
+}
+
+#text-div .tab{
+	margin-top: 8px;
+	padding: 5px 20px;
+	background: #EEEEEE;
+	border: 1px solid #DDDDDD;
+	max-height: 500px;
+	width: 660px;
+	overflow: auto;
+}
+	
+#left {
+	float: left;
+	text-align: left;
+	width: 350px;
+}
+
+#right {
+	float: right;
+	text-align: right;
+	width: 350px;
+}
+	
+button, .button {
+	background: #F3F3F3;
+	border: 1px solid #DCDCDC;
+	border-radius: 2px;
+	color: #444444;
+	cursor: pointer;
+	display: inline-block;
+	font: 700 11px Tahoma, Arial, sans-serif;
+	padding: 7px 12px 7px 12px;
+	position: relative;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #FFFFFF;
+}
+	
+.green {
+	color: #008000;
+	font-weight: bold;
+}
+
+.red {
+	color: #FF0000;
+	font-weight: bold;
+}
+
+.cbalink {
+	display: none;
+}

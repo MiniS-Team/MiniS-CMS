@@ -1,5 +1,10 @@
 <?php
-require 'config.php';
+if(!file_exists('config.php'))
+{
+	require "lang/english.php";
+} else {
+	require "config.php";
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
@@ -9,119 +14,8 @@ require 'config.php';
 	<meta http-equiv='Content-Language' content='pl-PL'>
 	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
 	<meta name="generator" content="MiniS CMS by M. Kucharskov & MiniS Team">
-	<style type="text/css">
-	<!--
-	body {
-		margin: 0;
-		padding 0;
-		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-		font-size: 13px;
-		color: #000000;
-	}
 	
-	a {
-		color: #336699;
-		text-decoration: none;
-	}
-
-	a:hover {
-		color: #666666;
-		text-decoration: none;
-	}
-
-	a.side {
-		color: #336699;
-		text-decoration: none;
-	}
-
-	a:hover.side {
-		color: #336699;
-		text-decoration: underline;
-	}
-
-	a.white {
-		color: #336699;
-		text-decoration: none;
-	}
-
-	a:hover.white {
-		color: #336699;
-		text-decoration: none;
-	}
-	
-	.kontener {
-		text-align: center;
-        margin: 0 auto;
-		border: 1px solid #000;
-		width: 735px;
-	}
-	
-	#text-div {
-		padding: 15px;
-		text-align: left;
-	}
-	
-	#text-div ul#text-div-nav{
-		margin: 0;
-		padding: 0;
-	}
-	
-	#text-div ul#text-div-nav li{
-		display: inline;
-		color: #777777;
-		padding: 5px 10px;
-		background: #d9d9d9;
-		border: 1px solid #999999;
-		text-decoration: none
-	}
-	
-	ul#text-div-nav li#active{
-		color: #000000;
-		background: #c7c7c7;
-		border: 1px solid #777777;
-	}
-
-	#text-div .tab{
-		margin-top: 8px;
-		padding: 5px 20px;
-		background: #EEEEEE;
-		border: 1px solid #DDDDDD;
-		max-height: 500px;
-		width: 660px;
-		overflow: auto;
-	}
-	
-	#left {
-		float: left;
-		text-align: left;
-		width: 350px;
-	}
-
-	#right {
-		float: right;
-		text-align: right;
-		width: 350px;
-	}
-	
-	button, .button {
-		background: #F3F3F3;
-		border: 1px solid #DCDCDC;
-		border-radius: 2px;
-		color: #444444;
-		cursor: pointer;
-		display: inline-block;
-		font: 700 11px Tahoma, Arial, sans-serif;
-		padding: 7px 12px 7px 12px;
-		position: relative;
-		text-decoration: none;
-		text-shadow: 0px 1px 0px #FFFFFF;
-	}
-
-	.cbalink {
-		display: none;
-	}
-	-->
-	</style>    
+	<link rel='stylesheet' type='text/css' href='css/install.css'>   
 </head>
 <body>
 	<h1 style="text-align: center;"><img src='img/MiniS.png'></h1>
@@ -827,7 +721,7 @@ Public License instead of this License.  But first, please read
 </div>
 <div id='right'>
 <a href='install.php?step=1'>
-<p class='button'>Akceptuję</p>
+<p class='button'>".$lang['INSTAL_ACC']."</p>
 </a>
 </div>
 <div style='clear: both'></div>
@@ -836,13 +730,14 @@ Public License instead of this License.  But first, please read
 echo "
 <div class='tab'>
 <div style='height: 50px;'></div>
-<div style='width: 200px; margin: 0 auto; text-align: center;'>";
+<div style='width: 300px; margin: 0 auto; text-align: center;'>";
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		file_put_contents ("config.php", "require 'lang/".$_POST['cms_lang']."';");
-		echo '<div class="n_ok"><p>OK!</p></div>';
+		file_put_contents ("config.php", "<?php require 'lang/".$_POST['cms_lang']."'; ?>");
+		echo '<div class="green">'.$lang['INSTAL_LANG_1'].'<br>'.$lang['INSTAL_LANG_2'].'</div><br>';
+		header('refresh: 3;');
 	}
-echo" <form action='install.php?step=1' method='post' id='formularz'>
-Wybierz język<br>
+echo" <form action='install.php?step=1' method='post' id='formularz'>"
+.$lang['INSTAL_LANG']."<br>
 <br>
 <select name='cms_lang'>
 <option value='none'>------------</option>";
@@ -855,7 +750,7 @@ Wybierz język<br>
 	}
 echo "</select><br>
 <br>
-<input class='button' type='submit' value='Zatwierdź'>
+<input class='button' type='submit' value=".$lang['INSTAL_SET'].">
 </form>
 </div>
 <div style='height: 50px;'></div>
@@ -865,7 +760,7 @@ echo "</select><br>
 </div>
 <div id='right'>
 <a href='install.php?step=2'>
-<p class='button'>Akceptuję</p>
+<p class='button'>".$lang['INSTAL_NEXT']."</p>
 </a>
 </div>
 <div style='clear: both'></div>
