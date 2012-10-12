@@ -23,6 +23,7 @@ $lang['MENU_1'] = "Settings";
 $lang['MENU_2'] = "Page preview";
 $lang['MENU_3'] = "Pages editor";
 $lang['MENU_4'] = "Add page";
+$lang['OK'] = "OK!";
 $lang['NO_FILE'] = "File not found!";
 $lang['SK_INFO'] = "System info";
 $lang['VER_LOC'] = "Local version";

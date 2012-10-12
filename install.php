@@ -740,7 +740,7 @@ echo "
 		{
 			file_put_contents ("config.php", "<?php require 'lang/".$_POST['cms_lang']."'; ?>");
 			echo '<div class="green">'.$lang['INSTAL_LANG_1'].'<br>'.$lang['INSTAL_LANG_2'].'</div><br>';
-			header('refresh: 3;');
+			header('refresh: 2;');
 		}
 	}
 echo" <form action='install.php?step=1' method='post' id='formularz'>"
@@ -776,9 +776,20 @@ echo "</select><br>
 echo "
 <div class='tab'>
 <div style='height: 50px;'></div>
-<div style='width: 300px; margin: 0 auto; text-align: center;'>
-STEP 2
-</div>
+<div style='margin: 0 auto; text-align: left;'>";
+$check = array
+(
+	'index.php', 'config.php', 'version.kucharskov', '.htaccess', 'pages/.htaccess', 'administration/admin_panel.php', 'administration/admin_panel_dodaj.php', 'administration/admin_panel_edytuj.php', 'administration/login.php', 'administration/logout.php', 'administration/index.php'
+);
+foreach($check as $file)
+{
+	if (file_exists($file)) {
+		echo $file.': <font class="green">'.$lang['OK'].'</font><br>';
+	} else {
+		echo $file.': <font class="red">'.$lang['NO_FILE'].'</font><br>';
+	}
+}
+echo"</div>
 <div style='height: 50px;'></div>
 </div>
 <br>

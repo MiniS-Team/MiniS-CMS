@@ -23,6 +23,7 @@ $lang['MENU_1'] = "Ustawienia";
 $lang['MENU_2'] = "Podgląd stron";
 $lang['MENU_3'] = "Edytuj strony";
 $lang['MENU_4'] = "Dodaj stronę";
+$lang['OK'] = "OK!";
 $lang['NO_FILE'] = "Brak pliku!";
 $lang['SK_INFO'] = "Informacje o systemie";
 $lang['VER_LOC'] = "Lokalna wersja";
