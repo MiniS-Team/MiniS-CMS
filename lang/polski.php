@@ -46,6 +46,7 @@ $lang['ET_BD_NO_NAZW'] = "Podaj nazwę pliku!";
 
 $lang['INSTAL_1'] = "Licencja";
 $lang['INSTAL_2'] = "Wybór języka";
+$lang['INSTAL_NOLANGSELECTED'] = "Musisz wybrać język by kontynuować.";
 $lang['INSTAL_3'] = "Test plików";
 $lang['INSTAL_4'] = "Konfiguracja";
 $lang['INSTAL_5'] = "Zakończenie";

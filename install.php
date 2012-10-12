@@ -732,9 +732,16 @@ echo "
 <div style='height: 50px;'></div>
 <div style='width: 300px; margin: 0 auto; text-align: center;'>";
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		file_put_contents ("config.php", "<?php require 'lang/".$_POST['cms_lang']."'; ?>");
-		echo '<div class="green">'.$lang['INSTAL_LANG_1'].'<br>'.$lang['INSTAL_LANG_2'].'</div><br>';
-		header('refresh: 3;');
+		if($_POST['cms_lang'] == 'none')
+		{
+			echo '<div class="red">' . $lang['INSTAL_NOLANGSELECTED'] . '</div><br>';
+		}
+		else
+		{
+			file_put_contents ("config.php", "<?php require 'lang/".$_POST['cms_lang']."'; ?>");
+			echo '<div class="green">'.$lang['INSTAL_LANG_1'].'<br>'.$lang['INSTAL_LANG_2'].'</div><br>';
+			header('refresh: 3;');
+		}
 	}
 echo" <form action='install.php?step=1' method='post' id='formularz'>"
 .$lang['INSTAL_LANG']."<br>
