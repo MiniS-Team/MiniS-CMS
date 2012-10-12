@@ -734,7 +734,7 @@ echo "
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		if($_POST['cms_lang'] == 'none')
 		{
-			echo '<div class="red">' . $lang['INSTAL_NOLANGSELECTED'] . '</div><br>';
+			echo '<div class="red">'.$lang['INSTAL_NOLANGSELECTED'].'</div><br>';
 		}
 		else
 		{
@@ -773,11 +773,59 @@ echo "</select><br>
 <div style='clear: both'></div>
 ";
 } else if ($_GET['step'] == 2) {
-echo "STEP 2";
+echo "
+<div class='tab'>
+<div style='height: 50px;'></div>
+<div style='width: 300px; margin: 0 auto; text-align: center;'>
+STEP 2
+</div>
+<div style='height: 50px;'></div>
+</div>
+<br>
+<div id='left'>
+</div>
+<div id='right'>
+<a href='install.php?step=3'>
+<p class='button'>".$lang['INSTAL_NEXT']."</p>
+</a>
+</div>
+<div style='clear: both'></div>
+";
 } else if ($_GET['step'] == 3) {
-echo "STEP 3";
+echo "
+<div class='tab'>
+<div style='height: 50px;'></div>
+<div style='width: 300px; margin: 0 auto; text-align: center;'>
+STEP 3
+</div>
+<div style='height: 50px;'></div>
+</div>
+<br>
+<div id='left'>
+</div>
+<div id='right'>
+<a href='install.php?step=4'>
+<p class='button'>".$lang['INSTAL_NEXT']."</p>
+</a>
+</div>
+<div style='clear: both'></div>
+";
 } else if ($_GET['step'] == 4) {
-echo "STEP 4";
+echo "
+<div class='tab'>
+<div style='height: 50px;'></div>
+<div style='width: 300px; margin: 0 auto; text-align: center;'>
+STEP 4
+</div>
+<div style='height: 50px;'></div>
+</div>
+<br>
+<div id='left'>
+</div>
+<div id='right'>
+</div>
+<div style='clear: both'></div>
+";
 }
 ?>
 
