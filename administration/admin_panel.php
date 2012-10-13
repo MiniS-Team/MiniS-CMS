@@ -64,8 +64,8 @@ if(!$_SESSION['username'])
 				<div class="h_title">&#8250; <?php echo $lang['SK_INFO'] ?></div>
 				<p class="b1">
 				<?php
-				$version = file_get_contents('http://Kucharskov.cba.pl/MiniS_CMS/.kucharskov/version.kucharskov');
-				$version_local = file_get_contents('../version.kucharskov');
+				$version = @file_get_contents('http://Kucharskov.cba.pl/MiniS_CMS/.kucharskov/version.kucharskov');
+				$version_local = @file_get_contents('../version.kucharskov');
 				
 				if(!$version) {
 				echo $lang['VER'].": <font style='color: #FF0000; font-weight: bold;'>".$lang['NO_FILE']."</font><br>";
