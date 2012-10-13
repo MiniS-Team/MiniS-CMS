@@ -24,17 +24,17 @@
 	text-align: center;
 }
 #header #nav ul li.upp a{
-	color: #bebebe;
+	color: #BEBEBE;
 	display: block;
 	padding: 0px 30px 11px 10px;
 	text-align: center;
 	text-shadow: #000 0px 1px 1px;
 }
 #header #nav ul li.upp a:hover{
-	color: #f07e01;
+	color: #F07E01;
 }
 #header #nav ul li.upp a .active{
-	color: #f07e01;
+	color: #F07E01;
 }
 
 #header #nav ul li.upp ul{

@@ -11,7 +11,7 @@
 	padding: 0;
 }
 body{
-	color: #bebebe;
+	color: #BEBEBE;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	margin: 0;
@@ -61,7 +61,7 @@ button:hover, .button:hover{
 .wrap{
 	margin: 0 auto;
 	width: 900px;
-	background: #f3f3f3 url(../img/bg_top.jpg) repeat-x;
+	background: #F3F3F3 url(../img/bg_top.jpg) repeat-x;
 	border-radius: 5px;
 	behaviour: url('../../js/border-radius.htc');
 	box-shadow: 0px 0px 15px #888;
@@ -75,24 +75,24 @@ button:hover, .button:hover{
 	text-shadow: #000 0px 1px 1px;
 }
 #header #top a{
-	color: #f07e01;
+	color: #F07E01;
 }
 
 #content{
 	margin: 30px 0 30px 0;
 }
 #content .b1{
-	background: #ffffff;
+	background: #FFFFFF;
 }
 #content .b2{
-	background: #f7f7f7;
+	background: #F7F7F7;
 }
 
 #content tr:nth-child(even){
-	background: #ffffff;
+	background: #FFFFFF;
 }
 #content tr:nth-child(odd){
-	background: #f7f7f7;
+	background: #F7F7F7;
 }
 
 /* CONTENT SIDEBAR START */
@@ -112,7 +112,7 @@ button:hover, .button:hover{
 }
 #sidebar .box .h_title{
 	background: url(../img/bg_box_head.jpg) repeat-x;
-	color: #bebebe;
+	color: #BEBEBE;
 	font-size: 11px;
 	font-weight: normal;
 	height: 22px;
@@ -158,14 +158,14 @@ button:hover, .button:hover{
 }
 
 #main .full_w{
-	background: #ffffff;
+	background: #FFFFFF;
 	border: 1px solid #DCDDE1;
 	color: #848484;
 	margin: 0 0 20px 0;
 }
 #main .full_w .h_title, #main .half_w .h_title{
 	background: url(../img/bg_box_head.jpg) repeat-x;
-	color: #bebebe;
+	color: #BEBEBE;
 	font-size: 11px;
 	font-weight: normal;
 	height: 22px;
@@ -184,7 +184,7 @@ button:hover, .button:hover{
 }
 
 #main .half_w{
-	background: #ffffff;
+	background: #FFFFFF;
 	border: 1px solid #DCDDE1;
 	color: #848484;
 	margin: 0 0 20px 0;
@@ -204,7 +204,7 @@ button:hover, .button:hover{
 	float: left;
 	margin: 10px auto;
 	text-align: center;
-	text-shadow: #fff 1px 1px 0px;
+	text-shadow: #FFF 1px 1px 0px;
 	width: 49%;
 }
 #main .stats .today{
@@ -233,7 +233,7 @@ button:hover, .button:hover{
 }
 #main form .element{
 	clear: both;
-	border-bottom: 1px dashed #ededed;
+	border-bottom: 1px dashed #EDEDED;
 	display: block;
 	margin: 0;
 	padding: 10px 10px;
@@ -259,7 +259,7 @@ button:hover, .button:hover{
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	padding: 5px 3px;
 }
-#main form input:focus, #main form select:focus, #main form textarea:focus{	border: 1px solid #b3b3b3;}
+#main form input:focus, #main form select:focus, #main form textarea:focus{	border: 1px solid #B3B3B3;}
 
 #main form select{
 	border: 1px solid #DDDDDD;
@@ -303,25 +303,25 @@ table{
 table th{ 
 	background: url(../img/bg_box_head.jpg) repeat-x;
 	color: #DACDCD;
-	border-left: 1px solid #ffffff;
-	border-right: 1px solid #ffffff;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
 	font-size: 11px; 
 	font-weight: bold; 
 	padding: 7px; 
 	text-shadow: 0px 1px #242424; 
 }
 table tr{ 
-	border-left: 1px solid #ffffff;
-	border-right: 1px solid #ffffff;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
 }
 table td{ 
-	border-bottom: 1px solid #ffffff; 
-	border-top: 1px solid ffffff; 
+	border-bottom: 1px solid #FFFFFF; 
+	border-top: 1px solid FFFFFF; 
 	color: #565656;
 	padding: 8px; 
 }
 table tr:hover td{ 
-	background: #fff8cf;
+	background: #FFF8CF;
 	color: #000000; 
 }
 table .chb{ 
@@ -339,7 +339,7 @@ table .chb{
 	text-align: center;
 }
 .pagination a{ 
-	border:solid 1px #d2d2d2; 
+	border:solid 1px #D2D2D2; 
 	color: #444444;  
 	margin-right:2px; 
 }
@@ -384,7 +384,7 @@ table .chb{
 
 /* HELPERS START */
 
-.entry{ color: #444; margin: 5px 0; padding: 5px 15px; text-shadow: 0px 1px #ffffff; }
+.entry{ color: #444; margin: 5px 0; padding: 5px 15px; text-shadow: 0px 1px #FFFFFF; }
 .add{ background: #F3F3F3 url(../img/i_add.png) no-repeat 4px center;	padding-left: 25px;}
 .cancel{ background: #F3F3F3 url(../img/i_delete.png) no-repeat 4px center;	padding-left: 25px;}
 .sep{ border-bottom: 1px dashed #DDDDDD; margin: 10px 0;}

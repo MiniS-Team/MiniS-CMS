@@ -11,8 +11,8 @@
 	padding: 0;
 }
 body{
-	background: #f3f3f3 url(../img/bg_login_top.jpg) no-repeat top center;
-	color: #bebebe;
+	background: #F3F3F3 url(../img/bg_login_top.jpg) no-repeat top center;
+	color: #BEBEBE;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	margin: 0;
@@ -62,10 +62,10 @@ button:hover, .button:hover{
 	margin: 120px 0 10px 0;
 }
 #content .b1{
-	background: #ffffff;
+	background: #FFFFFF;
 }
 #content .b2{
-	background: #eaeaea;
+	background: #EAEAEA;
 }
 
 
@@ -77,7 +77,7 @@ button:hover, .button:hover{
 	width: 400px;
 }
 #main .full_w{
-	background: #ffffff;
+	background: #FFFFFF;
 	border: 1px solid #DCDDE1;
 	border-radius: 5px;
 	box-shadow:  2px 2px 0px 1px rgba(235, 235, 235, 1);
@@ -86,7 +86,7 @@ button:hover, .button:hover{
 }
 #main .full_w .h_title{
 	background: url(../img/bg_box_head.jpg) repeat-x;
-	color: #bebebe;
+	color: #BEBEBE;
 	font-size: 11px;
 	font-weight: normal;
 	height: 22px;
@@ -106,7 +106,7 @@ button:hover, .button:hover{
 }
 #main form .element{
 	clear: both;
-	border-bottom: 1px dashed #ededed;
+	border-bottom: 1px dashed #EDEDED;
 	display: block;
 	margin: 0;
 	padding: 10px 10px;
@@ -132,7 +132,7 @@ button:hover, .button:hover{
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	padding: 5px 3px;
 }
-#main form input:focus, #main form select:focus, #main form textarea:focus{	border: 1px solid #b3b3b3;}
+#main form input:focus, #main form select:focus, #main form textarea:focus{	border: 1px solid #B3B3B3;}
 
 #main form select{
 	border: 1px solid #DDDDDD;
@@ -152,10 +152,10 @@ button:hover, .button:hover{
 #main .footer{
 	margin: 0 15px;
 	text-align: center;
-	text-shadow: 1px 1px 0px #ffffff;
+	text-shadow: 1px 1px 0px #FFFFFF;
 }
 #main .footer a{
-	color: #bebebe;
+	color: #BEBEBE;
 }
 
 /* MAIN NOTIFY */
@@ -175,7 +175,7 @@ button:hover, .button:hover{
 
 /* HELPERS START */
 
-.entry{ color: #444; margin: 5px 0; padding: 5px 15px; text-shadow: 0px 1px #ffffff; }
+.entry{ color: #444; margin: 5px 0; padding: 5px 15px; text-shadow: 0px 1px #FFFFFF; }
 .sep{ border-bottom: 1px dashed #DDDDDD; margin: 10px 0;}
 
 .clear{ clear: both; }
