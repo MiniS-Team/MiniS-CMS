@@ -397,3 +397,14 @@ table .chb{
 .align-left{ text-align: left; }
 .align-right{ text-align: right; }
 .align-center{ text-align: center; }
+
+/* COLOR TEXT */
+.green {
+	color: #008000;
+	font-weight: bold;
+}
+
+.red {
+	color: #FF0000;
+	font-weight: bold;
+}
