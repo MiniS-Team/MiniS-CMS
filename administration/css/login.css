@@ -218,12 +218,12 @@ div#logout {
 }
 
 /* COLOR TEXT */
-#green {
+.green {
 	color: #008000;
 	font-weight: bold;
 }
 
-#red {
+.red {
 	color: #FF0000;
 	font-weight: bold;
 }

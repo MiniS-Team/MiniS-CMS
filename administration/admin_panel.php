@@ -68,22 +68,22 @@ if(!$_SESSION['username'])
 				$version_local = @file_get_contents('../version.kucharskov');
 				
 				if(!$version) {
-				echo $lang['VER'].": <font style='color: #FF0000; font-weight: bold;'>".$lang['NO_FILE']."</font><br>";
+				echo $lang['VER'].": <font class='red'>".$lang['NO_FILE']."</font><br>";
 				} else {
 				echo $lang['VER'].": <b>".base64_decode($version)."</b><br>";
 				}
 				
 				if(!$version_local) {
-				echo $lang['VER_LOC'].": <font style='color: #FF0000; font-weight: bold;'>".$lang['NO_FILE']."</font><br>";
+				echo $lang['VER_LOC'].": <font class='red'>".$lang['NO_FILE']."</font><br>";
 				} else {
 				echo $lang['VER_LOC'].": <b>".base64_decode($version_local)."</b><br>";
 				}
 				
 				echo $lang['SK_ST'].": ";
 				if ($version_local==$version) {
-				echo "<font style='color: #008000; font-weight: bold;'>".$lang['SK_AK']."</font><br>"; 
+				echo "<font class='green'>".$lang['SK_AK']."</font><br>"; 
 				} else {
-				echo "<font style='color: #FF0000; font-weight: bold;'>".$lang['SK_NAK']."</font><br>";
+				echo "<font class='red'>".$lang['SK_NAK']."</font><br>";
 
 				echo "<form action='http://www.mediafire.com/?ap6bc8d7odakw' target='_blank'>";
 				echo "<input class='button' id='pnw-button' type='submit' value=".$lang['SK_PNW'].">";
@@ -105,7 +105,7 @@ if(!$_SESSION['username'])
 				$changelog = file_get_contents('http://Kucharskov.cba.pl/MiniS_CMS/.kucharskov/changelog.kucharskov');
 				
 				if(!$changelog) {
-				echo "<font style='color: #FF0000; font-weight: bold;'><p>".$lang['NO_FILE']."</p></font>";
+				echo "<font class='red'><p>".$lang['NO_FILE']."</p></font>";
 				} else {
 				echo $changelog;
 				}
