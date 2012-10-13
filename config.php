@@ -21,4 +21,5 @@ $PlikBodyText = "0.txt";					//Nazwa pliku otwierana w głównym oknie (z folder
 $LewyPanelText = "lewe_menu.txt";			//Nazwa pliku otwierana w lewym panelu (z folderu "pages")
 $PrawyPanelText = "prawe_menu.txt";			//Nazwa pliku otwierana w prawym panelu (z folderu "pages")
 $PoziomyPanelText = "poziome_menu.txt";		//Nazwa pliku otwierana w poziomym panelu (z folderu "pages")
+@ini_set('allow_url_fopen', 1);
 ?>
