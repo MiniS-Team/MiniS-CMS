@@ -84,6 +84,20 @@ ul#text-div-nav li#active{
 	width: 660px;
 	overflow: auto;
 }
+
+.intab {
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.intab_left {
+	margin: 0 auto;
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
 	
 #left {
 	float: left;

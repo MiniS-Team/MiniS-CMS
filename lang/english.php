@@ -54,6 +54,7 @@ $lang['INSTAL_5'] = "Ending";
 $lang['INSTAL_LANG'] = "Select language";
 $lang['INSTAL_LANG_1'] = "Saved!";
 $lang['INSTAL_LANG_2'] = "Wait for load language!";
+$lang['INSTAL_REF'] = "Refresh";
 $lang['INSTAL_ACC'] = "Accept";
 $lang['INSTAL_SET'] = "Set";
 $lang['INSTAL_NEXT'] = "Next";

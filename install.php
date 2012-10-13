@@ -729,8 +729,7 @@ Public License instead of this License.  But first, please read
 } else if ($_GET['step'] == 1) {
 echo "
 <div class='tab'>
-<div style='height: 50px;'></div>
-<div style='width: 300px; margin: 0 auto; text-align: center;'>";
+<div class='intab'>";
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		if($_POST['cms_lang'] == 'none')
 		{
@@ -743,7 +742,7 @@ echo "
 			header('refresh: 2;');
 		}
 	}
-echo" <form action='install.php?step=1' method='post' id='formularz'>"
+echo"<form action='install.php?step=1' method='post'>"
 .$lang['INSTAL_LANG']."<br>
 <br>
 <select name='cms_lang'>
@@ -751,7 +750,7 @@ echo" <form action='install.php?step=1' method='post' id='formularz'>"
 	$dir = opendir('lang/');
 	while($file = readdir($dir)) {
 		if($file !== '.' && $file !== '..' && $file !== '.htaccess') { 
-		echo '<option value='.$file.'>'.$file.'</option>\n';
+		echo '<option value='.$file.'>'.$file."</option>";
 		} else {
 		}
 	}
@@ -760,7 +759,6 @@ echo "</select><br>
 <input class='button' type='submit' value=".$lang['INSTAL_SET'].">
 </form>
 </div>
-<div style='height: 50px;'></div>
 </div>
 <br>
 <div id='left'>
@@ -775,8 +773,12 @@ echo "</select><br>
 } else if ($_GET['step'] == 2) {
 echo "
 <div class='tab'>
-<div style='height: 50px;'></div>
-<div style='margin: 0 auto; text-align: left;'>";
+<div class='intab_left'>";
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		header('refresh: 1;');
+	}
+
+$blad = 0;
 $check = array
 (
 	'index.php', 'config.php', 'version.kucharskov', '.htaccess', 'pages/.htaccess', 'administration/admin_panel.php', 'administration/admin_panel_dodaj.php', 'administration/admin_panel_edytuj.php', 'administration/login.php', 'administration/logout.php', 'administration/index.php'
@@ -787,29 +789,45 @@ foreach($check as $file)
 		echo $file.': <font class="green">'.$lang['OK'].'</font><br>';
 	} else {
 		echo $file.': <font class="red">'.$lang['NO_FILE'].'</font><br>';
+		$blad = 1;
 	}
 }
-echo"</div>
-<div style='height: 50px;'></div>
+echo"<br>";
+	if ($blad == 1) {
+		echo "<div style='margin: 0 auto; text-align: center'>
+		<form action='install.php?step=2' method='post'>
+		<input class='button' type='submit' value=".$lang['INSTAL_REF'].">
+		</form>
+		</div>";
+	}
+echo "</div>
 </div>
 <br>
 <div id='left'>
 </div>
-<div id='right'>
-<a href='install.php?step=3'>
-<p class='button'>".$lang['INSTAL_NEXT']."</p>
-</a>
-</div>
+<div id='right'>";
+	if ($blad == 0) {
+		echo "<a href='install.php?step=3'>
+		<p class='button'>".$lang['INSTAL_NEXT']."</p>
+		</a>";
+	}
+echo "</div>
 <div style='clear: both'></div>
 ";
 } else if ($_GET['step'] == 3) {
-echo "
-<div class='tab'>
-<div style='height: 50px;'></div>
-<div style='width: 300px; margin: 0 auto; text-align: center;'>
-STEP 3
+
+echo "<div class='tab'>
+<div class='intab'>";
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		file_put_contents("config.php", $dane, FILE_APPEND);
+		echo "<p class='green'>".$lang['INSTAL_LANG_1']."</p>";
+	}
+echo "<div style='text-align: right'>
+<form action='install.php?step=3' method='post'>
+<input class='button' type='submit' value=".$lang['ET_ZAP'].">
+</form>
 </div>
-<div style='height: 50px;'></div>
+</div>
 </div>
 <br>
 <div id='left'>
@@ -824,11 +842,9 @@ STEP 3
 } else if ($_GET['step'] == 4) {
 echo "
 <div class='tab'>
-<div style='height: 50px;'></div>
-<div style='width: 300px; margin: 0 auto; text-align: center;'>
+<div class='intab'>
 STEP 4
 </div>
-<div style='height: 50px;'></div>
 </div>
 <br>
 <div id='left'>
