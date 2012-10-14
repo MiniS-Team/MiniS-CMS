@@ -2,7 +2,7 @@
 /*
 #
 # Языковый файл «Русский» для скрипта MiniS CMS
-# M. Kucharskov & MiniS Team
+# novembergirl
 #
 */
 
