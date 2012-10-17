@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if(!file_exists('config.php'))
 {
 	require "lang/english.php";
@@ -815,15 +815,69 @@ echo "</div>
 <div style='clear: both'></div>
 ";
 } else if ($_GET['step'] == 3) {
-
+$styles = scandir('css');
+$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
 echo "<div class='tab'>
 <div class='intab'>";
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		file_put_contents("config.php", $dane, FILE_APPEND);
-		echo "<p class='green'>".$lang['INSTAL_LANG_1']."</p>";
+		$error = array();
+		$dane = $_POST;
+		if(!$dane['my_login']) $error[] = $lang['CONFIG_NO_LOGIN'];
+		if(!$dane['my_pass']) $error[] = $lang['CONFIG_NO_PASS'];
+		if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
+		if(!$dane['site_lang'])  $error[] = $lang['CONFIG_NO_SITE_LANG'];
+		if(!$error)
+		{
+			$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
+			foreach($dane as $k => $v)
+			{
+				$configString .= "\${$k} = '{$v}';\n";
+			}
+			$configString .= 
+			"\n/* Panele */\n
+			\$panel_lewo = 1;							//Lewy panel: 1- Włączone 0 - Wyłączone\n
+			\$panel_prawo = 1;							//Prawy panel: 1- Włączone 0 - Wyłączone\n
+			\$panel_poziomo = 1;							//Poziomy panel: 1- Włączone 0 - Wyłączone\n
+\n
+	     	/* Zawartość paneli */\n
+			\$PlikBodyText = '0.txt';					//Nazwa pliku otwierana w głównym oknie (z folderu \"pages\")\n
+			\$LewyPanelText = 'lewe_menu.txt';			//Nazwa pliku otwierana w lewym panelu (z folderu \"pages\")\n
+			\$PrawyPanelText = 'prawe_menu.txt';			//Nazwa pliku otwierana w prawym panelu (z folderu \"pages\")\n
+			\$PoziomyPanelText = 'poziome_menu.txt';		//Nazwa pliku otwierana w poziomym panelu (z folderu \"pages\")\n
+			@ini_set('allow_url_fopen', 1);";
+			file_put_contents("config.php", $configString);
+			echo "<p class='green'>".$lang['INSTAL_LANG_1']."</p>";
+		}
+		else
+		{
+			echo "<p class='red'>{$lang['CONFIG_ERRORS']}<ul>";
+			foreach($error as $err)
+			{
+				echo "<li>{$err}</li>";
+			}
+			echo "</ul></p>";
+		}
 	}
 echo "<div style='text-align: right'>
 <form action='install.php?step=3' method='post'>
+<table>
+<tr><th>{$lang['CONFIG_LOGIN']}</th><td><input type='text' name='my_login' value='{$dane['my_login']}' required></td></tr>
+<tr><th>{$lang['CONFIG_PASS']}</th><td><input type='password' name='my_pass' required></td></tr>
+<tr><th>{$lang['CONFIG_SITE_NAME']}</th><td><input type='text' name='site_name' value='{$dane['site_name']}' required></td></tr>
+<tr><th>{$lang['CONFIG_SITE_DESC']}</th><td><input type='text' name='site_description' value='{$dane['site_description']}'></td></tr>
+<tr><th>{$lang['CONFIG_SITE_KEYWORDS']}</th><td><input type='text' name='site_keywords' value='{$dane['site_keywords']}'></td></tr>
+<tr><th>{$lang['CONFIG_SITE_LANG']}</th><td><input type='text' name='site_lang' value='" . (($dane['site_lang']) ? $dane['site_lang'] : $lang['CODE']) . "'></td></tr>
+<tr><th>{$lang['CONFIG_SITE_GSV']}</th><td><input type='text' name='site_gsv' value='{$dane['site_gsv']}'></td></tr>
+<tr><th>{$lang['CONFIG_STYLE_NAME']}</th><td>
+<select name='style' style='width: 100%'>
+";
+foreach ($styles as $styleName)
+{
+	echo "<option>{$styleName}</option>";
+}
+echo "</select>
+</td></tr>
+</table>
 <input class='button' type='submit' value=".$lang['ET_ZAP'].">
 </form>
 </div>

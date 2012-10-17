@@ -6,6 +6,9 @@
 #
 */
 
+$lang['CODE'] = "pl_PL";
+$lang['NAME'] = "polski";
+
 $lang['CMS'] = "MiniS CMS";
 $lang['LOG'] = "Login";
 $lang['PASS'] = "Hasło";
@@ -54,10 +57,24 @@ $lang['INSTAL_5'] = "Zakończenie";
 $lang['INSTAL_LANG'] = "Wybierz język";
 $lang['INSTAL_LANG_1'] = "Zapisano!";
 $lang['INSTAL_LANG_2'] = "Poczekaj na załadowanie języka!";
-$lang['INSTAL_REF'] = "Odświerz";
+$lang['INSTAL_REF'] = "Odśwież";
 $lang['INSTAL_ACC'] = "Akceptuję";
 $lang['INSTAL_SET'] = "Ustaw";
 $lang['INSTAL_NEXT'] = "Dalej";
+
+$lang['CONFIG_LOGIN'] = 'Login administratora';
+$lang['CONFIG_PASS'] = 'Hasło administratora';
+$lang['CONFIG_SITE_NAME'] = 'Nazwa strony';
+$lang['CONFIG_SITE_LANG'] = 'Język treści strony (nie oznacza języka systemu!)';
+$lang['CONFIG_SITE_GSV'] = 'Kod Google Site Verification (jeśli nie korzystasz z Narzędzi dla Webmastera pozostaw puste)';
+$lang['CONFIG_SITE_DESC'] = 'Opis strony';
+$lang['CONFIG_SITE_KEYWORDS'] = 'Słowa kluczowe strony oddzielone przecinkami';
+$lang['CONFIG_STYLE_NAME'] = 'Nazwa stylu';
+
+$lang['CONFIG_NO_LOGIN'] = 'Wymagany login administratora';
+$lang['CONFIG_NO_PASS'] = 'Wymagane hasło administratora';
+$lang['CONFIG_NO_SITE_NAME'] = 'Wymagana nazwa strony';
+$lang['CONFIG_ERRORS'] = 'Przy wypełnianiu formularza popełniono następujące błędy';
 
 GLOBAL $lang
 
