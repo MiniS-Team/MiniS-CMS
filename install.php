@@ -11,14 +11,14 @@ if(!file_exists('config.php'))
 <html>
 <head>
 	<title>MiniS CMS</title>
-	<meta http-equiv='Content-Language' content='pl-PL'>
-	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
+	<meta http-equiv="Content-Language" content="pl-PL">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="MiniS CMS by M. Kucharskov & MiniS Team">
 	
-	<link rel='stylesheet' type='text/css' href='css/install.css'>   
+	<link rel="stylesheet" type="text/css" href="css/install.css">   
 </head>
 <body>
-	<h1 style="text-align: center;"><img src='img/MiniS.png'></h1>
+	<h1 style="text-align: center;"><img src="img/MiniS.png" alt=""></h1>
 	<div class="kontener">
 		<div id="text-div">
 			<ul id="text-div-nav">
@@ -800,6 +800,8 @@ echo"<br>";
 		<input class='button' type='submit' value=".$lang['INSTAL_REF'].">
 		</form>
 		</div>";
+	} else {
+		echo "</div>";
 	}
 echo "</div>
 <br>
