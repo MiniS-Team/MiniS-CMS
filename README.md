@@ -6,7 +6,7 @@ http://Kucharskov.cba.pl/MiniS_CMS/
 **MiniS CMS:** M.Kucharskov & MiniS Team  
 **Style** Spritex1  
 **Styl panelu administratora:** kilab  
-**Korekta styli:** freaks
+**Korekta styli:** freaks  
 **Język rosyjski:** novembergirl  
 
 ## Wstęp
