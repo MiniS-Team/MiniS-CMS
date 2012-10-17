@@ -4,10 +4,10 @@ http://Kucharskov.cba.pl
 http://Kucharskov.cba.pl/MiniS_CMS/
 
 **MiniS CMS:** M.Kucharskov & MiniS Team  
-**Style** Spritex1  
+**Repozytorium:** Cysioland  
+**Style & Korekta:** Spritex1 & freaks  
 **Styl panelu administratora:** kilab  
-**Korekta styli:** freaks  
-**Język rosyjski:** novembergirl  
+**Tłumaczenia:** M. Kucharskov, novembergirl & Cysioland  
 
 ## Wstęp
 Jako uczeń technikum informatycznego postanowiłem troszeczkę wyprzedzić plan nauczania (o niecałe 2 lata) i stworzyć podstawowy skrypt do zarządzania treścią. Nim właśnie jest MiniS CMS
