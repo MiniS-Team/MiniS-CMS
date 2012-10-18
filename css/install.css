@@ -53,13 +53,17 @@ a:hover.white {
 	width: 150px;
 }
 
-.input:focus {
+.input:hover {
 	border: 1px solid #B3B3B3;
+}
+
+.input:focus {
+	border: 1px solid #6A6A6A;
 }
 	
 .kontener {
 	text-align: center;
-    margin: 0 auto;
+    	margin: 0 auto;
 	border: 1px solid #000;
 	width: 735px;
 }
