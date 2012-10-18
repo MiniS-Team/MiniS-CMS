@@ -62,14 +62,14 @@ $lang['INSTAL_ACC'] = "Принимаю";
 $lang['INSTAL_SET'] = "Настроить";
 $lang['INSTAL_NEXT'] = "Дальше";
 
-$lang['CONFIG_LOGIN'] = 'Administrator login'; // NovemberGirl, przetłumacz
-$lang['CONFIG_PASS'] = 'Administrator password';
-$lang['CONFIG_SITE_NAME'] = 'Site name';
-$lang['CONFIG_SITE_LANG'] = 'Site content language (doesn\'t mean system language!)';
-$lang['CONFIG_SITE_GSV'] = 'Google Site Verification code (if you don\'t use Webmaster Tools leave blank)';
-$lang['CONFIG_SITE_DESC'] = 'Site description';
-$lang['CONFIG_SITE_KEYWORDS'] = 'Keywords separated by commas';
-$lang['CONFIG_STYLE_NAME'] = 'Style name';
+$lang['CONFIG_LOGIN'] = "Login administratora"; // NovemberGirl, przetłumacz
+$lang['CONFIG_PASS'] = "Hasło administratora";
+$lang['CONFIG_SITE_NAME'] = "Nazwa strony";
+$lang['CONFIG_SITE_LANG'] = "Język treści strony (nie oznacza języka systemu!)";
+$lang['CONFIG_SITE_GSV'] = "Kod Google Site Verification";
+$lang['CONFIG_SITE_DESC'] = "Opis strony";
+$lang['CONFIG_SITE_KEYWORDS'] = "Słowa kluczowe strony (oddzielone przecinkami)";
+$lang['CONFIG_STYLE_NAME'] = "Nazwa stylu";
 
 $lang['CONFIG_NO_LOGIN'] = 'Administrator login is required';
 $lang['CONFIG_NO_PASS'] = 'Administrator password is required';

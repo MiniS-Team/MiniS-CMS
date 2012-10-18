@@ -62,14 +62,14 @@ $lang['INSTAL_ACC'] = "Accept";
 $lang['INSTAL_SET'] = "Set";
 $lang['INSTAL_NEXT'] = "Next";
 
-$lang['CONFIG_LOGIN'] = 'Administrator login';
-$lang['CONFIG_PASS'] = 'Administrator password';
-$lang['CONFIG_SITE_NAME'] = 'Site name';
-$lang['CONFIG_SITE_LANG'] = 'Site content language (doesn\'t mean system language!)';
-$lang['CONFIG_SITE_GSV'] = 'Google Site Verification code (if you don\'t use Webmaster Tools leave blank)';
-$lang['CONFIG_SITE_DESC'] = 'Site description';
-$lang['CONFIG_SITE_KEYWORDS'] = 'Keywords separated by commas';
-$lang['CONFIG_STYLE_NAME'] = 'Style name';
+$lang['CONFIG_LOGIN'] = "Administrator login";
+$lang['CONFIG_PASS'] = "Administrator password";
+$lang['CONFIG_SITE_NAME'] = "Site name";
+$lang['CONFIG_SITE_LANG'] = "Site content language (doesn't mean system language!)";
+$lang['CONFIG_SITE_GSV'] = "Google Site Verification code";
+$lang['CONFIG_SITE_DESC'] = "Site description";
+$lang['CONFIG_SITE_KEYWORDS'] = "Keywords (separated by commas)";
+$lang['CONFIG_STYLE_NAME'] = "Style name";
 
 $lang['CONFIG_NO_LOGIN'] = 'Administrator login is required';
 $lang['CONFIG_NO_PASS'] = 'Administrator password is required';

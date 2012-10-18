@@ -822,10 +822,12 @@ echo "<div class='tab'>
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$error = array();
 		$dane = $_POST;
+		$config_done = 0;
 		if(!$dane['my_login']) $error[] = $lang['CONFIG_NO_LOGIN'];
 		if(!$dane['my_pass']) $error[] = $lang['CONFIG_NO_PASS'];
 		if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
 		if(!$error) {
+			$config_done = 1;
 			$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
 			foreach($dane as $k => $v)
 			{
@@ -859,9 +861,9 @@ echo "<div class='tab'>
 	}
 echo "<div class='intab_left'>
 <form action='install.php?step=3' method='post'>
-<label>{$lang['CONFIG_LOGIN']} </label><input type='text' name='my_login' value='{$dane['my_login']}' required><br><br>
-<label>{$lang['CONFIG_PASS']} </label><input type='password' name='my_pass' required><br><br>
-<label>{$lang['CONFIG_SITE_NAME']} </label><input type='text' name='site_name' value='{$dane['site_name']}' required><br><br>
+<label>{$lang['CONFIG_LOGIN']}: </label><br><input type='text' class='input' name='my_login' value='{$dane['my_login']}' required><br><br>
+<label>{$lang['CONFIG_PASS']}: </label><br><input type='password' class='input' name='my_pass' required><br><br>
+<label>{$lang['CONFIG_SITE_NAME']}: </label><br><input type='text' class='input' name='site_name' value='{$dane['site_name']}' required><br>
 </div>
 <input class='button' type='submit' value=".$lang['ET_ZAP'].">
 </form>
@@ -870,11 +872,13 @@ echo "<div class='intab_left'>
 <br>
 <div id='left'>
 </div>
-<div id='right'>
-<a href='install.php?step=4'>
-<p class='button'>".$lang['INSTAL_NEXT']."</p>
-</a>
-</div>
+<div id='right'>";
+	if ($config_done == 1) {
+		echo "<a href='install.php?step=4'>
+		<p class='button'>".$lang['INSTAL_NEXT']."</p>
+		</a>";
+	}
+echo "</div>
 <div style='clear: both'></div>
 ";
 } else if ($_GET['step'] == 4) {
