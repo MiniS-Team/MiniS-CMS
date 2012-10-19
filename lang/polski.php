@@ -45,6 +45,7 @@ $lang['ET_ZAW'] ="Zawartość";
 $lang['ET_ZAP'] ="Zapisz";
 $lang['ET_AN'] ="Anuluj";
 $lang['ET_COF'] ="Cofnij";
+$lang['ET_DEL'] ="Usuń";
 $lang['ET_WYM'] ="(wymagane)";
 $lang['ET_BD_NAZW'] = "Nazwa pliku może zawierać jedynie: litery, cyfry oraz znak '_'!";
 $lang['ET_BD_NO_NAZW'] = "Podaj nazwę pliku!";

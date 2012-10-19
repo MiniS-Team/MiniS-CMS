@@ -91,9 +91,12 @@ if(!$_SESSION['username'])
 					$tresc = $_POST['content'];
 					$folder = "../pages/";
 
-					if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-						file_put_contents ($folder.$nazwa, $tresc);
-						echo '<div class="n_ok"><p>'.$lang['PLK_ZAP_OK'].'</p></div>';
+					if (!$nazwa && !$tresc) {
+					} else {
+						if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+							file_put_contents ($folder.$nazwa, $tresc);
+							echo '<div class="n_ok"><p>'.$lang['PLK_ZAP_OK'].'</p></div>';
+						}
 					}
 				?>
 				</div>
@@ -107,7 +110,7 @@ if(!$_SESSION['username'])
 						<textarea name="content" class="textarea" id="textarea" rows="25"></textarea>
 					</div>
 					<div class="entry">
-						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset" class="cancel"><?php echo $lang['ET_COF'] ?></button>
+						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset" ><?php echo $lang['ET_COF'] ?></button> <button type="reset" class="cancel"><?php echo $lang['ET_DEL'] ?></button>
 					</div>
 				</form>
 			</div>

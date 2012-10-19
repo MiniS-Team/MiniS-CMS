@@ -45,6 +45,7 @@ $lang['ET_ZAW'] ="Содержание";
 $lang['ET_ZAP'] ="Записать";
 $lang['ET_AN'] ="Отменить";
 $lang['ET_COF'] ="Назад";
+$lang['ET_DEL'] ="Usuń"; // NovemberGirl, przetłumacz
 $lang['ET_WYM'] ="(требуется)";
 $lang['ET_BD_NAZW'] = "Название файла может содержать только: буквы, цифры а также симбол '_'!";
 $lang['ET_BD_NO_NAZW'] = "Ввести название файла!";

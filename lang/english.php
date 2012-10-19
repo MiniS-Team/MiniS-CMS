@@ -45,6 +45,7 @@ $lang['ET_ZAW'] ="Content";
 $lang['ET_ZAP'] ="Save";
 $lang['ET_AN'] ="Cancel";
 $lang['ET_COF'] ="Undo";
+$lang['ET_DEL'] ="Delete";
 $lang['ET_WYM'] ="(required)";
 $lang['ET_BD_NAZW'] = "The file name can contain only: letters, numbers and '_' character!";
 $lang['ET_BD_NO_NAZW'] = "Enter the file name!";
