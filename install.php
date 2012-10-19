@@ -1,6 +1,11 @@
 ﻿<?php
-if(!file_exists('config.php'))
-{
+if(file_exists('.lock')) {
+	echo "<div style='font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 13px; width: 350px; margin: 0 auto; text-align: center; color: #FFFFFF; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border-radius: 4px 4px 4px 4px; border-style: solid; border-width: 1px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset; margin-bottom: 18px; padding: 7px 15px; position: relative; background-color: #C43C35; background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35); background-repeat: repeat-x; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);'>";
+	echo "Delete <b>.lock</b> file to run install.php!";
+	echo "</div>";
+	die;
+}
+if(!file_exists('config.php')) {
 	require "lang/english.php";
 } else {
 	require "config.php";
@@ -10,10 +15,10 @@ if(!file_exists('config.php'))
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>MiniS CMS</title>
-	<meta http-equiv="Content-Language" content="pl-PL">
+	<title><?php echo $lang['CMS'] ?></title>
+	<meta http-equiv="Content-Language" content="<?php echo $lang['CODE'] ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-	<meta name="generator" content="MiniS CMS by M. Kucharskov & MiniS Team">
+	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">
 	
 	<link rel="stylesheet" type="text/css" href="css/install.css">   
 </head>
@@ -22,11 +27,11 @@ if(!file_exists('config.php'))
 	<div class="kontener">
 		<div id="text-div">
 			<ul id="text-div-nav">
-			  <li <?php if (!$_GET['step']) { echo "id='active'";} ?>><?php echo $lang['INSTAL_1'] ?></li>
-			  <li <?php if ($_GET['step']==1) { echo "id='active'";} ?>><?php echo $lang['INSTAL_2'] ?></li>
-			  <li <?php if ($_GET['step']==2) { echo "id='active'";} ?>><?php echo $lang['INSTAL_3'] ?></li>
-			  <li <?php if ($_GET['step']==3) { echo "id='active'";} ?>><?php echo $lang['INSTAL_4'] ?></li>
-			  <li <?php if ($_GET['step']==4) { echo "id='active'";} ?>><?php echo $lang['INSTAL_5'] ?></li>
+			  <li<?php if (!$_GET['step']) { echo " id='active'";} ?>><?php echo $lang['INSTAL_1'] ?></li>
+			  <li<?php if ($_GET['step']==1) { echo " id='active'";} ?>><?php echo $lang['INSTAL_2'] ?></li>
+			  <li<?php if ($_GET['step']==2) { echo " id='active'";} ?>><?php echo $lang['INSTAL_3'] ?></li>
+			  <li<?php if ($_GET['step']==3) { echo " id='active'";} ?>><?php echo $lang['INSTAL_4'] ?></li>
+			  <li<?php if ($_GET['step']==4) { echo " id='active'";} ?>><?php echo $lang['INSTAL_5'] ?></li>
 			</ul>
 
 <?php if (!$_GET['step']) {
@@ -834,7 +839,7 @@ echo "<div class='tab'>
 				$configString .= "\${$k} = '{$v}';\n";
 			}
 			$configString .= 
-			"\$style_name = 'white'; 							//Wpisz nazwe stylu z folderu \"css\" (white/black/blue/red)
+			"\$style_name = 'white';
 
 /* Panele */
 \$panel_lewo = 1;							//Lewy panel: 1- Włączone 0 - Wyłączone
@@ -885,16 +890,29 @@ echo "</div>
 echo "
 <div class='tab'>
 <div class='intab'>
-STEP 4
+<h2>".$lang['INSTAL_THX']."</h2>
+<div class='intab_left'>"
+.$lang['INSTAL_LINKS'].":<br>
+<a href='http://Kucharskov.cba.pl/MiniS_CMS/' target='_blank'>".$lang['CMS']."</a><br>
+<a href='index.php' target='_blank'>".$lang['INDEX']."</a><br>
+<a href='administration/index.php' target='_blank'>".$lang['PA'] ."</a>
+</div>
 </div>
 </div>
 <br>
 <div id='left'>
 </div>
 <div id='right'>
+<a href='install.php?step=5'>
+		<p class='button'>".$lang['INSTAL_FIN']."</p>
+		</a>
 </div>
 <div style='clear: both'></div>
 ";
+} else if ($_GET['step'] == 5) {
+	file_put_contents(".lock", "MiniS CMS Rocks!");
+	header("Location: index.php");
+	exit;
 }
 ?>
 

@@ -16,6 +16,7 @@ $lang['LOGIN'] = "Zaloguj";
 $lang['LOGOUT'] = "Wyloguj";
 $lang['PVIEW'] = "Podgląd";
 $lang['PA'] = "Panel Administratora";
+$lang['INDEX'] = "Strona główna";
 $lang['COM'] = "Komunikat";
 $lang['REDIR'] = "Przekierowanie";
 $lang['REDIR_'] = "Przekierowanie...";
@@ -61,6 +62,9 @@ $lang['INSTAL_REF'] = "Odśwież";
 $lang['INSTAL_ACC'] = "Akceptuję";
 $lang['INSTAL_SET'] = "Ustaw";
 $lang['INSTAL_NEXT'] = "Dalej";
+$lang['INSTAL_FIN'] = "Zakończ";
+$lang['INSTAL_THX'] = "Dziękujemy za instalacje skryptu MiniS CMS!";
+$lang['INSTAL_LINKS'] = "Ważniejsze linki";
 
 $lang['CONFIG_LOGIN'] = "Login administratora";
 $lang['CONFIG_PASS'] = "Hasło administratora";
