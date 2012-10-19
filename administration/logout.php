@@ -16,10 +16,12 @@ session_destroy();
 
 header("Refresh:1; url=../index.php");
 ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title><?php echo $site_name ?> - <?php echo $lang['REDIR'] ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
+	<meta http-equiv="Content-Language" content="<?php echo $lang['CODE'] ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
