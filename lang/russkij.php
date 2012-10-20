@@ -69,6 +69,9 @@ $lang['INSTAL_THX'] = "Спасибо за установку скрипта Min
 $lang['INSTAL_LINKS'] = "Важнейшие линки";
 $lang['INSTAL_LOCK_INFO'] = "Aby ponownie uruchomic instalator, usuń plik .lock"; //Novembergirl prosze przetłumaczyć
 
+$lang['CONFIG_CAT1'] = "Konto administratora";
+$lang['CONFIG_CAT2'] = "Ustawienia strony";
+$lang['CONFIG_CAT3'] = "Wygląd i panele";
 $lang['CONFIG_LOGIN'] = "Логин администратора";
 $lang['CONFIG_PASS'] = "Лозунг администратора";
 $lang['CONFIG_SITE_NAME'] = "Название сайта";

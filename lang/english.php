@@ -69,6 +69,9 @@ $lang['INSTAL_THX'] = "Thank you for installation Minis CMS script!";
 $lang['INSTAL_LINKS'] = "Important links";
 $lang['INSTAL_LOCK_INFO'] = "To re-run the installer, delete the file .lock";
 
+$lang['CONFIG_CAT1'] = "Admin account";
+$lang['CONFIG_CAT2'] = "Page setup";
+$lang['CONFIG_CAT3'] = "Appearance and panels";
 $lang['CONFIG_LOGIN'] = "Administrator login";
 $lang['CONFIG_PASS'] = "Administrator password";
 $lang['CONFIG_SITE_NAME'] = "Site name";

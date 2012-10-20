@@ -96,9 +96,9 @@ if(!$_SESSION['username'])
 			<div class="full_w">
 				<div class="h_title"><?php echo $lang['MENU_1'] ?></div>
 				<div class="align-center">
-					<a href='admin_panel.php?settings=admin'><p class='button'>Konto administratora</p></a>
-					<a href='admin_panel.php?settings=page'><p class='button'>Ustawienia strony</p></a>
-					<a href='admin_panel.php?settings=styles'><p class='button'>Wygląd i panele</p></a>
+					<a href='admin_panel.php?settings=admin'><p class='button'><?php echo $lang['CONFIG_CAT1'] ?></p></a>
+					<a href='admin_panel.php?settings=page'><p class='button'><?php echo $lang['CONFIG_CAT2'] ?></p></a>
+					<a href='admin_panel.php?settings=styles'><p class='button'><?php echo $lang['CONFIG_CAT3'] ?></p></a>
 				</div>
 				<?php
 				if (!$_GET['settings']) {

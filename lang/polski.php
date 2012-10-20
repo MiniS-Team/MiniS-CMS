@@ -69,6 +69,9 @@ $lang['INSTAL_THX'] = "Dziękujemy za instalacje skryptu MiniS CMS!";
 $lang['INSTAL_LINKS'] = "Ważniejsze linki";
 $lang['INSTAL_LOCK_INFO'] = "Aby ponownie uruchomic instalator, usuń plik .lock";
 
+$lang['CONFIG_CAT1'] = "Konto administratora";
+$lang['CONFIG_CAT2'] = "Ustawienia strony";
+$lang['CONFIG_CAT3'] = "Wygląd i panele";
 $lang['CONFIG_LOGIN'] = "Login administratora";
 $lang['CONFIG_PASS'] = "Hasło administratora";
 $lang['CONFIG_SITE_NAME'] = "Nazwa strony";
