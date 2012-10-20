@@ -95,7 +95,14 @@ if(!$_SESSION['username'])
 		<div id="main">			
 			<div class="full_w">
 				<div class="h_title"><?php echo $lang['MENU_1'] ?></div>
+				<div class="align-center">
+					<a href='admin_panel.php?settings=admin'><p class='button'>Konto administratora</p></a>
+					<a href='admin_panel.php?settings=page'><p class='button'>Ustawienia strony</p></a>
+					<a href='admin_panel.php?settings=styles'><p class='button'>Wygląd i panele</p></a>
+				</div>
 				<?php
+				if (!$_GET['settings']) {
+				} else if ($_GET['settings'] == "admin") {
 				$styles = scandir('../css');
 				$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
 				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -134,7 +141,7 @@ if(!$_SESSION['username'])
 					}
 				}
 				echo "
-				<form action='admin_panel.php' method='post'>
+				<form action='admin_panel.php?settings=admin' method='post'>
 				<div class='left' style='width: 35%;'>
 				<label>{$lang['CONFIG_LOGIN']}: </label><input type='text' class='input text' name='my_login' value='{$dane['my_login']}' required><br><br>
 				<label>{$lang['CONFIG_PASS']}: </label><input type='password' class='input text' name='my_pass' required><br><br>
@@ -155,8 +162,12 @@ if(!$_SESSION['username'])
 				<div class='clear'></div>
 				<button type='submit'>".$lang['ET_ZAP']."</button>
 				</form>";
+				} else if ($_GET['settings'] == "page") {
+					echo "pages";
+				} else if ($_GET['settings'] == "styles") {
+					echo "styles";
+				}
 				?>
-				<div class='n_warning'><p>Włączanie i wyłączanie paneli jest dostepne poprzez edycje config.php</p></div>
 			</div>
 			
 			<div class="full_w">
