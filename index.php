@@ -13,7 +13,7 @@ if(!file_exists('config.php')) {
 <html>
 <head>
 	<title><?php echo $site_name ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $lang['CODE'] ?>">
+	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">
 	<meta name="google-site-verification" content="<?php echo $site_gsv ?>">
@@ -21,7 +21,7 @@ if(!file_exists('config.php')) {
 	<meta name="keywords" content="<?php echo $site_keywords ?>">	
 
 	<link rel="stylesheet" type="text/css" href="css/base.css">
-	<link rel="stylesheet" type="text/css" href="css/<?php echo $style_name ?>.css">
+	<link rel="stylesheet" type="text/css" href="css/<?php echo $style_name ?>">
 	
 	<script type="text/javascript" src="js/JQuery.min.js"></script>
 	<script type="text/javascript">

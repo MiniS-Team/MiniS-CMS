@@ -35,6 +35,7 @@ $lang['VER'] = "Новейшая версия";
 $lang['SK_ST'] = "Состояние скрипта";
 $lang['SK_AK'] = "АКТУАЛЬНЫЙ";
 $lang['SK_NAK'] = "НЕАКТУАЛЬНЫЙ";
+$lang['SK_DEV'] = "Wersja Developerska";//Novembergirl prosze przetłumaczyć
 $lang['SK_PNW'] = "Скачать&nbsp;новейшую&nbsp;версию";
 $lang['SK_ZM'] = "Список изменений";
 $lang['L_PLK'] = "Список файлов";

@@ -1,3 +1,3 @@
 $(document).ready( function(){
-	$('#plik_info').delay(2500).hide('slow');
+	$('#info_hide').delay(2500).hide('slow');
 });

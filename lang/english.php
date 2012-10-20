@@ -35,6 +35,7 @@ $lang['VER'] = "Newest version";
 $lang['SK_ST'] = "Script status";
 $lang['SK_AK'] = "ACTUAL";
 $lang['SK_NAK'] = "OUT OF DATE";
+$lang['SK_DEV'] = "Development Version";
 $lang['SK_PNW'] = "Download&nbsp;new&nbsp;version";
 $lang['SK_ZM'] = "Change log";
 $lang['L_PLK'] = "Files list";

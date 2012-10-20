@@ -399,6 +399,11 @@ table .chb{
 .align-center{ text-align: center; }
 
 /* COLOR TEXT */
+.blue {
+	color: #000080;
+	font-weight: bold;
+}
+
 .green {
 	color: #008000;
 	font-weight: bold;

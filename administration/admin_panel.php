@@ -22,7 +22,7 @@ if(!$_SESSION['username'])
 <html>
 <head>
 	<title><?php echo $site_name ?> - <?php echo $lang['PA']  ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $lang['CODE'] ?>">
+	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
@@ -30,6 +30,7 @@ if(!$_SESSION['username'])
 	<link rel="stylesheet" type="text/css" href="css/navi.css" media="screen">
 	
 	<script type="text/javascript" src="../js/JQuery.min.js"></script>
+	<script type="text/javascript" src="js/info_hide.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -77,7 +78,10 @@ if(!$_SESSION['username'])
 				}
 				
 				echo $lang['SK_ST'].": ";
-				if ($version_local==$version) {
+				if ($version_local > $version) {
+				echo "<font class='blue'>".$lang['SK_DEV']."</font><br>"; 
+				}
+				else if ($version_local == $version) {
 				echo "<font class='green'>".$lang['SK_AK']."</font><br>"; 
 				} else {
 				echo "<font class='red'>".$lang['SK_NAK']."</font><br>";
@@ -91,7 +95,68 @@ if(!$_SESSION['username'])
 		<div id="main">			
 			<div class="full_w">
 				<div class="h_title"><?php echo $lang['MENU_1'] ?></div>
-				<div class="n_error"><p>Wersja skryptu nie obsługuje konfiguracji zdalnej. Edytuj plik config.php</p></div>
+				<?php
+				$styles = scandir('../css');
+				$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
+				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+					$error = array();
+					$dane = $_POST;
+					if(!$dane['my_login']) $error[] = $lang['CONFIG_NO_LOGIN'];
+					if(!$dane['my_pass']) $error[] = $lang['CONFIG_NO_PASS'];
+					if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
+					if(!$dane['site_lang']) $error[] = $lang['CONFIG_NO_SITE_LANG'];
+					if(!$error) {
+						$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
+						foreach($dane as $k => $v) {
+							$configString .= "\${$k} = '{$v}';\n";
+						}
+						$configString .= "
+/* Panele */
+\$panel_lewo = 1; //Lewy panel: 1- Włączone 0 - Wyłączone
+\$panel_prawo = 1; //Prawy panel: 1- Włączone 0 - Wyłączone
+\$panel_poziomo = 0; //Poziomy panel: 1- Włączone 0 - Wyłączone
+
+/* Zawartość paneli */
+\$PlikBodyText = '0.txt'; //Nazwa pliku otwierana w głównym oknie (z folderu \"pages\")
+\$LewyPanelText = 'lewe_menu.txt'; //Nazwa pliku otwierana w lewym panelu (z folderu \"pages\")
+\$PrawyPanelText = 'prawe_menu.txt'; //Nazwa pliku otwierana w prawym panelu (z folderu \"pages\")
+\$PoziomyPanelText = 'poziome_menu.txt'; //Nazwa pliku otwierana w poziomym panelu (z folderu \"pages\")
+@ini_set('allow_url_fopen', 1);
+?>";
+						file_put_contents("../config.php", $configString);
+						echo "<div id='info_hide'><div class='n_ok'><p>".$lang['INSTAL_LANG_1']."</p></div></div>";
+					} else {
+							echo "<div id='info_hide'><div class='n_error'><p>{$lang['CONFIG_ERRORS']}</p></div></div><ul>";
+						foreach($error as $err) {
+							echo "<li>{$err}</li>";
+						}
+							echo "</ul>";
+					}
+				}
+				echo "
+				<form action='admin_panel.php' method='post'>
+				<div class='left' style='width: 35%;'>
+				<label>{$lang['CONFIG_LOGIN']}: </label><input type='text' class='input text' name='my_login' value='{$dane['my_login']}' required><br><br>
+				<label>{$lang['CONFIG_PASS']}: </label><input type='password' class='input text' name='my_pass' required><br><br>
+				<label>{$lang['CONFIG_SITE_NAME']}: </label><input type='text' class='input text' name='site_name' value='{$dane['site_name']}' required><br><br>
+				<label>{$lang['CONFIG_SITE_LANG']}: </label><input type='text' class='input text' name='site_lang' value='".(($dane['site_lang']) ? $dane['site_lang'] : $lang['CODE'])."'><br><br>
+				</div>
+				<div class='right' style='width: 55%;'>
+				<label>{$lang['CONFIG_SITE_KEYWORDS']}: </label><input type='text' class='input text' name='site_keywords' value='{$dane['site_keywords']}'><br><br>
+				<label>{$lang['CONFIG_SITE_DESC']}: </label><input type='text' class='input text' name='site_description' value='{$dane['site_description']}'><br><br>
+				<label>{$lang['CONFIG_SITE_GSV']}: </label><input type='text' class='input text' name='site_gsv' value='{$dane['site_gsv']}'><br><br>
+				<label>{$lang['CONFIG_STYLE_NAME']}: </label>
+				<select name='style_name' style='width: 30%'>";
+				foreach ($styles as $styleName)
+				{
+					echo "<option>{$styleName}</option>";
+				}
+				echo "</select></div>
+				<div class='clear'></div>
+				<button type='submit'>".$lang['ET_ZAP']."</button>
+				</form>";
+				?>
+				<div class='n_warning'><p>Włączanie i wyłączanie paneli jest dostepne poprzez edycje config.php</p></div>
 			</div>
 			
 			<div class="full_w">

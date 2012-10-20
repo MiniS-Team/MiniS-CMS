@@ -16,7 +16,7 @@ if(!file_exists('config.php')) {
 <html>
 <head>
 	<title><?php echo $lang['CMS'] ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $lang['CODE'] ?>">
+	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">
 	

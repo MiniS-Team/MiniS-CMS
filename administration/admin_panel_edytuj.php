@@ -22,7 +22,7 @@ if(!$_SESSION['username'])
 <html>
 <head>
 	<title><?php echo $site_name ?> - <?php echo $lang['PA']  ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $lang['CODE'] ?>">
+	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
@@ -74,7 +74,7 @@ if(!$_SESSION['username'])
 						$load_start2 = "$('#name').attr('value', '";
 						$load_end2 = "');";
 						$load2 = $load_start2.$file.$load_end2;
-						echo '<li class="b'.$parity.'"><a href="#" onClick="'.$load.$load2.'">'.$file."</a></li>\n";
+						echo '<li class="b'.$parity.'"><a href="#" onClick="'.$load.$load2.'">'.$file."</a> </li>\n";
 						} else {
 						}
 					}
@@ -85,7 +85,7 @@ if(!$_SESSION['username'])
 		<div id="main">			
 			<div class="full_w">
 				<div class="h_title"><?php echo $lang['MENU_3'] ?></div>
-				<div id="plik_info">
+				<div id="info_hide">
 				<?php
 					$nazwa = $_POST['name'];
 					$tresc = $_POST['content'];
@@ -110,7 +110,7 @@ if(!$_SESSION['username'])
 						<textarea name="content" class="textarea" id="textarea" rows="25"></textarea>
 					</div>
 					<div class="entry">
-						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset" ><?php echo $lang['ET_COF'] ?></button> <button type="reset" class="cancel"><?php echo $lang['ET_DEL'] ?></button>
+						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset"><?php echo $lang['ET_COF'] ?></button>
 					</div>
 				</form>
 			</div>

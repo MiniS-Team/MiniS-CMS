@@ -35,6 +35,7 @@ $lang['VER'] = "Najnowsza wersja";
 $lang['SK_ST'] = "Stan skryptu";
 $lang['SK_AK'] = "AKTUALNY";
 $lang['SK_NAK'] = "NIEAKTUALNY";
+$lang['SK_DEV'] = "Wersja Developerska";
 $lang['SK_PNW'] = "Pobierz&nbsp;nową&nbsp;wersję";
 $lang['SK_ZM'] = "Lista zmian";
 $lang['L_PLK'] = "Lista plików";
