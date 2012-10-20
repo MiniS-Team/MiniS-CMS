@@ -66,6 +66,7 @@ $lang['INSTAL_NEXT'] = "Дальше";
 $lang['INSTAL_FIN'] = "Закончить";
 $lang['INSTAL_THX'] = "Спасибо за установку скрипта MiniS CMS!";
 $lang['INSTAL_LINKS'] = "Важнейшие линки";
+$lang['INSTAL_LOCK_INFO'] = "Aby ponownie uruchomic instalator, usuń plik .lock"; //Novembergirl prosze przetłumaczyć
 
 $lang['CONFIG_LOGIN'] = "Логин администратора";
 $lang['CONFIG_PASS'] = "Лозунг администратора";
