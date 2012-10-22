@@ -10,6 +10,11 @@ if(!file_exists('../config.php')) {
 	require '../config.php';
 }
 
+function escape($string)
+{
+	return ((get_magic_quotes_gpc()) ? $string : addslashes($string));
+}
+
 session_name('MiniSLogin');
 session_start();
 
@@ -117,6 +122,7 @@ if(!$_SESSION['username'])
 					if(!$error) {
 						$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
 						foreach($dane as $k => $v) {
+							$v = escape($v);
 							$configString .= "\${$k} = '{$v}';\n";
 						}
 						$configString .= "

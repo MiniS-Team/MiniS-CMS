@@ -847,7 +847,7 @@ echo "<div class='tab'>
 				$configString .= "\${$k} = '{$v}';\n";
 			}
 			$configString .= 
-			"\$style_name = 'white';
+			"\$style_name = 'white.css';
 
 /* Panele */
 \$panel_lewo = 1;							//Lewy panel: 1- Włączone 0 - Wyłączone
