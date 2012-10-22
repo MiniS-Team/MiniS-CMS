@@ -1,7 +1,9 @@
 <?php
 if(!file_exists('../config.php')) {
+	echo "<div style='text-align: center; margin: 0 auto;'>";
 	echo "<div style='font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 13px; width: 350px; margin: 0 auto; text-align: center; color: #FFFFFF; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border-radius: 4px 4px 4px 4px; border-style: solid; border-width: 1px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset; margin-bottom: 18px; padding: 7px 15px; position: relative; background-color: #C43C35; background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35); background-repeat: repeat-x; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);'>";
 	echo "File <b>config.php</b> required by MiniS CMS has not been found!";
+	echo "</div>";
 	echo "</div>";
 	die;
 } else {
@@ -17,7 +19,8 @@ if(!$_SESSION['username'])
 	exit;
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title><?php echo $site_name ?> - <?php echo $lang['PA']  ?></title>
@@ -73,7 +76,7 @@ if(!$_SESSION['username'])
 						$load_start2 = "$('#name').attr('value', '";
 						$load_end2 = "');";
 						$load2 = $load_start2.$file.$load_end2;
-						echo '<li class="b'.$parity.'"><a href="#" onClick="'.$load.$load2.'">'.$file."</a></li>\n";
+						echo '<li class="b'.$parity.'"><a href="#" onClick="'.$load.$load2.'">'.$file."</a> </li>\n";
 						} else {
 						}
 					}
@@ -84,15 +87,18 @@ if(!$_SESSION['username'])
 		<div id="main">			
 			<div class="full_w">
 				<div class="h_title"><?php echo $lang['MENU_3'] ?></div>
-				<div id="plik_info">
+				<div id="info_hide">
 				<?php
 					$nazwa = $_POST['name'];
 					$tresc = $_POST['content'];
 					$folder = "../pages/";
 
-					if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-						file_put_contents ($folder.$nazwa, $tresc);
-						echo '<div class="n_ok"><p>'.$lang['PLK_ZAP_OK'].'</p></div>';
+					if (!$nazwa && !$tresc) {
+					} else {
+						if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+							file_put_contents ($folder.$nazwa, $tresc);
+							echo '<div class="n_ok"><p>'.$lang['PLK_ZAP_OK'].'</p></div>';
+						}
 					}
 				?>
 				</div>
@@ -106,7 +112,7 @@ if(!$_SESSION['username'])
 						<textarea name="content" class="textarea" id="textarea" rows="25"></textarea>
 					</div>
 					<div class="entry">
-						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset" class="cancel"><?php echo $lang['ET_COF'] ?></button>
+						<button type="submit" class="add"><?php echo $lang['ET_ZAP'] ?></button> <button type="reset"><?php echo $lang['ET_COF'] ?></button>
 					</div>
 				</form>
 			</div>

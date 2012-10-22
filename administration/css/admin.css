@@ -10,8 +10,9 @@
 	margin: 0;
 	padding: 0;
 }
+
 body{
-	color: #BEBEBE;
+	color: #AEAEAE;
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	margin: 0;
@@ -399,6 +400,11 @@ table .chb{
 .align-center{ text-align: center; }
 
 /* COLOR TEXT */
+.blue {
+	color: #000080;
+	font-weight: bold;
+}
+
 .green {
 	color: #008000;
 	font-weight: bold;

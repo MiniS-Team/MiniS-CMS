@@ -1,7 +1,9 @@
 <?php
 if(!file_exists('../config.php')) {
+	echo "<div style='text-align: center; margin: 0 auto;'>";
 	echo "<div style='font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 13px; width: 350px; margin: 0 auto; text-align: center; color: #FFFFFF; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border-radius: 4px 4px 4px 4px; border-style: solid; border-width: 1px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset; margin-bottom: 18px; padding: 7px 15px; position: relative; background-color: #C43C35; background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35); background-repeat: repeat-x; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);'>";
 	echo "File <b>config.php</b> required by MiniS CMS has not been found!";
+	echo "</div>";
 	echo "</div>";
 	die;
 } else {
@@ -17,7 +19,8 @@ if(!$_SESSION['username'])
 	exit;
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title><?php echo $site_name ?> - <?php echo $lang['PA']  ?></title>
@@ -29,6 +32,7 @@ if(!$_SESSION['username'])
 	<link rel="stylesheet" type="text/css" href="css/navi.css" media="screen">
 	
 	<script type="text/javascript" src="../js/JQuery.min.js"></script>
+	<script type="text/javascript" src="js/info_hide.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -76,7 +80,10 @@ if(!$_SESSION['username'])
 				}
 				
 				echo $lang['SK_ST'].": ";
-				if ($version_local==$version) {
+				if ($version_local > $version) {
+				echo "<font class='blue'>".$lang['SK_DEV']."</font><br>"; 
+				}
+				else if ($version_local == $version) {
 				echo "<font class='green'>".$lang['SK_AK']."</font><br>"; 
 				} else {
 				echo "<font class='red'>".$lang['SK_NAK']."</font><br>";
@@ -90,7 +97,79 @@ if(!$_SESSION['username'])
 		<div id="main">			
 			<div class="full_w">
 				<div class="h_title"><?php echo $lang['MENU_1'] ?></div>
-				<div class="n_error"><p>Wersja skryptu nie obsługuje konfiguracji zdalnej. Edytuj plik config.php</p></div>
+				<div class="align-center">
+					<a href='admin_panel.php?settings=admin'><p class='button'><?php echo $lang['CONFIG_CAT1'] ?></p></a>
+					<a href='admin_panel.php?settings=page'><p class='button'><?php echo $lang['CONFIG_CAT2'] ?></p></a>
+					<a href='admin_panel.php?settings=styles'><p class='button'><?php echo $lang['CONFIG_CAT3'] ?></p></a>
+				</div>
+				<?php
+				if (!$_GET['settings']) {
+				} else if ($_GET['settings'] == "admin") {
+				$styles = scandir('../css');
+				$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
+				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+					$error = array();
+					$dane = $_POST;
+					if(!$dane['my_login']) $error[] = $lang['CONFIG_NO_LOGIN'];
+					if(!$dane['my_pass']) $error[] = $lang['CONFIG_NO_PASS'];
+					if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
+					if(!$dane['site_lang']) $error[] = $lang['CONFIG_NO_SITE_LANG'];
+					if(!$error) {
+						$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
+						foreach($dane as $k => $v) {
+							$configString .= "\${$k} = '{$v}';\n";
+						}
+						$configString .= "
+/* Panele */
+\$panel_lewo = 1; //Lewy panel: 1- Włączone 0 - Wyłączone
+\$panel_prawo = 1; //Prawy panel: 1- Włączone 0 - Wyłączone
+\$panel_poziomo = 0; //Poziomy panel: 1- Włączone 0 - Wyłączone
+
+/* Zawartość paneli */
+\$PlikBodyText = '0.txt'; //Nazwa pliku otwierana w głównym oknie (z folderu \"pages\")
+\$LewyPanelText = 'lewe_menu.txt'; //Nazwa pliku otwierana w lewym panelu (z folderu \"pages\")
+\$PrawyPanelText = 'prawe_menu.txt'; //Nazwa pliku otwierana w prawym panelu (z folderu \"pages\")
+\$PoziomyPanelText = 'poziome_menu.txt'; //Nazwa pliku otwierana w poziomym panelu (z folderu \"pages\")
+@ini_set('allow_url_fopen', 1);
+?>";
+						file_put_contents("../config.php", $configString);
+						echo "<div id='info_hide'><div class='n_ok'><p>".$lang['INSTAL_LANG_1']."</p></div></div>";
+					} else {
+							echo "<div id='info_hide'><div class='n_error'><p>{$lang['CONFIG_ERRORS']}</p></div></div><ul>";
+						foreach($error as $err) {
+							echo "<li>{$err}</li>";
+						}
+							echo "</ul>";
+					}
+				}
+				echo "
+				<form action='admin_panel.php?settings=admin' method='post'>
+				<div class='left' style='width: 35%;'>
+				<label>{$lang['CONFIG_LOGIN']}: </label><input type='text' class='input text' name='my_login' value='{$dane['my_login']}' required><br><br>
+				<label>{$lang['CONFIG_PASS']}: </label><input type='password' class='input text' name='my_pass' required><br><br>
+				<label>{$lang['CONFIG_SITE_NAME']}: </label><input type='text' class='input text' name='site_name' value='{$dane['site_name']}' required><br><br>
+				<label>{$lang['CONFIG_SITE_LANG']}: </label><input type='text' class='input text' name='site_lang' value='".(($dane['site_lang']) ? $dane['site_lang'] : $lang['CODE'])."'><br><br>
+				</div>
+				<div class='right' style='width: 55%;'>
+				<label>{$lang['CONFIG_SITE_KEYWORDS']}: </label><input type='text' class='input text' name='site_keywords' value='{$dane['site_keywords']}'><br><br>
+				<label>{$lang['CONFIG_SITE_DESC']}: </label><input type='text' class='input text' name='site_description' value='{$dane['site_description']}'><br><br>
+				<label>{$lang['CONFIG_SITE_GSV']}: </label><input type='text' class='input text' name='site_gsv' value='{$dane['site_gsv']}'><br><br>
+				<label>{$lang['CONFIG_STYLE_NAME']}: </label>
+				<select name='style_name' style='width: 30%'>";
+				foreach ($styles as $styleName)
+				{
+					echo "<option>{$styleName}</option>";
+				}
+				echo "</select></div>
+				<div class='clear'></div>
+				<button type='submit'>".$lang['ET_ZAP']."</button>
+				</form>";
+				} else if ($_GET['settings'] == "page") {
+					echo "pages";
+				} else if ($_GET['settings'] == "styles") {
+					echo "styles";
+				}
+				?>
 			</div>
 			
 			<div class="full_w">

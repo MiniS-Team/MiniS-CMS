@@ -1,6 +1,13 @@
 ﻿<?php
-if(!file_exists('config.php'))
-{
+if(file_exists('.lock')) {
+	echo "<div style='text-align: center; margin: 0 auto;'>";
+	echo "<div style='font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 13px; width: 350px; margin: 0 auto; text-align: center; color: #FFFFFF; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border-radius: 4px 4px 4px 4px; border-style: solid; border-width: 1px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset; margin-bottom: 18px; padding: 7px 15px; position: relative; background-color: #C43C35; background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35); background-repeat: repeat-x; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);'>";
+	echo "Delete <b>.lock</b> file to run installer!";
+	echo "</div>";
+	echo "</div>";
+	die;
+}
+if(!file_exists('config.php')) {
 	require "lang/english.php";
 } else {
 	require "config.php";
@@ -15,23 +22,23 @@ function escape($string)
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>MiniS CMS</title>
-	<meta http-equiv='Content-Language' content='pl-PL'>
-	<meta http-equiv='Content-type' content='text/html; charset=UTF-8'>
-	<meta name="generator" content="MiniS CMS by M. Kucharskov & MiniS Team">
+	<title><?php echo $lang['CMS'] ?></title>
+	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">
 	
-	<link rel='stylesheet' type='text/css' href='css/install.css'>   
+	<link rel="stylesheet" type="text/css" href="css/install.css">   
 </head>
 <body>
-	<h1 style="text-align: center;"><img src='img/MiniS.png'></h1>
+	<h1 style="text-align: center;"><img src="img/MiniS.png" alt=""></h1>
 	<div class="kontener">
 		<div id="text-div">
 			<ul id="text-div-nav">
-			  <li <?php if (!$_GET['step']) { echo "id='active'";} ?>><?php echo $lang['INSTAL_1'] ?></li>
-			  <li <?php if ($_GET['step']==1) { echo "id='active'";} ?>><?php echo $lang['INSTAL_2'] ?></li>
-			  <li <?php if ($_GET['step']==2) { echo "id='active'";} ?>><?php echo $lang['INSTAL_3'] ?></li>
-			  <li <?php if ($_GET['step']==3) { echo "id='active'";} ?>><?php echo $lang['INSTAL_4'] ?></li>
-			  <li <?php if ($_GET['step']==4) { echo "id='active'";} ?>><?php echo $lang['INSTAL_5'] ?></li>
+			  <li<?php if (!$_GET['step']) { echo " id='active'";} ?>><?php echo $lang['INSTAL_1'] ?></li>
+			  <li<?php if ($_GET['step']==1) { echo " id='active'";} ?>><?php echo $lang['INSTAL_2'] ?></li>
+			  <li<?php if ($_GET['step']==2) { echo " id='active'";} ?>><?php echo $lang['INSTAL_3'] ?></li>
+			  <li<?php if ($_GET['step']==3) { echo " id='active'";} ?>><?php echo $lang['INSTAL_4'] ?></li>
+			  <li<?php if ($_GET['step']==4) { echo " id='active'";} ?>><?php echo $lang['INSTAL_5'] ?></li>
 			</ul>
 
 <?php if (!$_GET['step']) {
@@ -799,14 +806,16 @@ foreach($check as $file)
 }
 echo"<br>";
 	if ($blad == 1) {
-		echo "<div style='margin: 0 auto; text-align: center'>
+		echo "</div>
+		<div class='intab'>
 		<form action='install.php?step=2' method='post'>
 		<input class='button' type='submit' value=".$lang['INSTAL_REF'].">
 		</form>
 		</div>";
+	} else {
+		echo "</div>";
 	}
 echo "</div>
-</div>
 <br>
 <div id='left'>
 </div>
@@ -820,19 +829,17 @@ echo "</div>
 <div style='clear: both'></div>
 ";
 } else if ($_GET['step'] == 3) {
-$styles = scandir('css');
-$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
 echo "<div class='tab'>
 <div class='intab'>";
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$error = array();
 		$dane = $_POST;
+		$config_done = 0;
 		if(!$dane['my_login']) $error[] = $lang['CONFIG_NO_LOGIN'];
 		if(!$dane['my_pass']) $error[] = $lang['CONFIG_NO_PASS'];
 		if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
-		if(!$dane['site_lang'])  $error[] = $lang['CONFIG_NO_SITE_LANG'];
-		if(!$error)
-		{
+		if(!$error) {
+			$config_done = 1;
 			$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
 			foreach($dane as $k => $v)
 			{
@@ -840,22 +847,23 @@ echo "<div class='tab'>
 				$configString .= "\${$k} = '{$v}';\n";
 			}
 			$configString .= 
-			"\n/* Panele */\n
-			\$panel_lewo = 1;							//Lewy panel: 1- Włączone 0 - Wyłączone\n
-			\$panel_prawo = 1;							//Prawy panel: 1- Włączone 0 - Wyłączone\n
-			\$panel_poziomo = 1;							//Poziomy panel: 1- Włączone 0 - Wyłączone\n
-\n
-	     	/* Zawartość paneli */\n
-			\$PlikBodyText = '0.txt';					//Nazwa pliku otwierana w głównym oknie (z folderu \"pages\")\n
-			\$LewyPanelText = 'lewe_menu.txt';			//Nazwa pliku otwierana w lewym panelu (z folderu \"pages\")\n
-			\$PrawyPanelText = 'prawe_menu.txt';			//Nazwa pliku otwierana w prawym panelu (z folderu \"pages\")\n
-			\$PoziomyPanelText = 'poziome_menu.txt';		//Nazwa pliku otwierana w poziomym panelu (z folderu \"pages\")\n
-			@ini_set('allow_url_fopen', 1);";
+			"\$style_name = 'white';
+
+/* Panele */
+\$panel_lewo = 1;							//Lewy panel: 1- Włączone 0 - Wyłączone
+\$panel_prawo = 1;							//Prawy panel: 1- Włączone 0 - Wyłączone
+\$panel_poziomo = 0;							//Poziomy panel: 1- Włączone 0 - Wyłączone
+
+/* Zawartość paneli */
+\$PlikBodyText = '0.txt';					//Nazwa pliku otwierana w głównym oknie (z folderu \"pages\")
+\$LewyPanelText = 'lewe_menu.txt';			//Nazwa pliku otwierana w lewym panelu (z folderu \"pages\")
+\$PrawyPanelText = 'prawe_menu.txt';			//Nazwa pliku otwierana w prawym panelu (z folderu \"pages\")
+\$PoziomyPanelText = 'poziome_menu.txt';		//Nazwa pliku otwierana w poziomym panelu (z folderu \"pages\")
+@ini_set('allow_url_fopen', 1);
+?>";
 			file_put_contents("config.php", $configString);
 			echo "<p class='green'>".$lang['INSTAL_LANG_1']."</p>";
-		}
-		else
-		{
+		} else {
 			echo "<p class='red'>{$lang['CONFIG_ERRORS']}<ul>";
 			foreach($error as $err)
 			{
@@ -864,55 +872,56 @@ echo "<div class='tab'>
 			echo "</ul></p>";
 		}
 	}
-echo "<div style='text-align: right'>
+echo "<div class='intab_left'>
 <form action='install.php?step=3' method='post'>
-<table>
-<tr><th>{$lang['CONFIG_LOGIN']}</th><td><input type='text' name='my_login' value='{$dane['my_login']}' required></td></tr>
-<tr><th>{$lang['CONFIG_PASS']}</th><td><input type='password' name='my_pass' required></td></tr>
-<tr><th>{$lang['CONFIG_SITE_NAME']}</th><td><input type='text' name='site_name' value='{$dane['site_name']}' required></td></tr>
-<tr><th>{$lang['CONFIG_SITE_DESC']}</th><td><input type='text' name='site_description' value='{$dane['site_description']}'></td></tr>
-<tr><th>{$lang['CONFIG_SITE_KEYWORDS']}</th><td><input type='text' name='site_keywords' value='{$dane['site_keywords']}'></td></tr>
-<tr><th>{$lang['CONFIG_SITE_LANG']}</th><td><input type='text' name='site_lang' value='" . (($dane['site_lang']) ? $dane['site_lang'] : $lang['CODE']) . "'></td></tr>
-<tr><th>{$lang['CONFIG_SITE_GSV']}</th><td><input type='text' name='site_gsv' value='{$dane['site_gsv']}'></td></tr>
-<tr><th>{$lang['CONFIG_STYLE_NAME']}</th><td>
-<select name='style' style='width: 100%'>
-";
-foreach ($styles as $styleName)
-{
-	echo "<option>{$styleName}</option>";
-}
-echo "</select>
-</td></tr>
-</table>
+<label>{$lang['CONFIG_LOGIN']}: </label><br><input type='text' class='input' name='my_login' value='{$dane['my_login']}' required><br><br>
+<label>{$lang['CONFIG_PASS']}: </label><br><input type='password' class='input' name='my_pass' required><br><br>
+<label>{$lang['CONFIG_SITE_NAME']}: </label><br><input type='text' class='input' name='site_name' value='{$dane['site_name']}' required><br>
+</div>
 <input class='button' type='submit' value=".$lang['ET_ZAP'].">
 </form>
-</div>
 </div>
 </div>
 <br>
 <div id='left'>
 </div>
-<div id='right'>
-<a href='install.php?step=4'>
-<p class='button'>".$lang['INSTAL_NEXT']."</p>
-</a>
-</div>
+<div id='right'>";
+	if ($config_done == 1) {
+		echo "<a href='install.php?step=4'>
+		<p class='button'>".$lang['INSTAL_NEXT']."</p>
+		</a>";
+	}
+echo "</div>
 <div style='clear: both'></div>
 ";
 } else if ($_GET['step'] == 4) {
 echo "
 <div class='tab'>
 <div class='intab'>
-STEP 4
+<h2>".$lang['INSTAL_THX']."</h2>
+<div class='intab_left'>"
+.$lang['INSTAL_LINKS'].":<br>
+<a href='http://Kucharskov.cba.pl/MiniS_CMS/' target='_blank'>".$lang['CMS']."</a><br>
+<a href='index.php' target='_blank'>".$lang['INDEX']."</a><br>
+<a href='administration/index.php' target='_blank'>".$lang['PA'] ."</a>
+</div>
+<div class='red'>".$lang['INSTAL_LOCK_INFO']."</div>
 </div>
 </div>
 <br>
 <div id='left'>
 </div>
 <div id='right'>
+<a href='install.php?step=5'>
+		<p class='button'>".$lang['INSTAL_FIN']."</p>
+		</a>
 </div>
 <div style='clear: both'></div>
 ";
+} else if ($_GET['step'] == 5) {
+	file_put_contents(".lock", "MiniS CMS Rocks!");
+	header("Location: index.php");
+	exit;
 }
 ?>
 

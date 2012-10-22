@@ -1,1 +1,0 @@
-<?php require 'lang/polski.php'; ?>
