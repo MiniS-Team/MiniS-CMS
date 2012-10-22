@@ -5,6 +5,11 @@ if(!file_exists('config.php'))
 } else {
 	require "config.php";
 }
+
+function escape($string)
+{
+	return ((get_magic_quotes_gpc()) ? $string : addslashes($string));
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
@@ -831,6 +836,7 @@ echo "<div class='tab'>
 			$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
 			foreach($dane as $k => $v)
 			{
+				$v = escape($v);
 				$configString .= "\${$k} = '{$v}';\n";
 			}
 			$configString .= 
