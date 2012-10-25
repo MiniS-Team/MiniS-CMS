@@ -14,16 +14,16 @@ if(!file_exists('config.php')) {
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title><?php echo $site_name ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
+	<title><?php echo $config['site_name'] ?></title>
+	<meta http-equiv="Content-Language" content="<?php echo $config['site_lang'] ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">
-	<meta name="google-site-verification" content="<?php echo $site_gsv ?>">
-	<meta name="description" content="<?php echo $site_description ?>">
-	<meta name="keywords" content="<?php echo $site_keywords ?>">	
+	<meta name="google-site-verification" content="<?php echo $config['site_gsv'] ?>">
+	<meta name="description" content="<?php echo $config['site_description'] ?>">
+	<meta name="keywords" content="<?php echo $config['site_keywords'] ?>">	
 
 	<link rel="stylesheet" type="text/css" href="css/base.css">
-	<link rel="stylesheet" type="text/css" href="css/<?php echo $style_name ?>">
+	<link rel="stylesheet" type="text/css" href="css/<?php echo $config['style_name'] ?>">
 	
 	<script type="text/javascript" src="js/JQuery.min.js"></script>
 	<script type="text/javascript">
@@ -61,9 +61,9 @@ if(!file_exists('config.php')) {
 
 	<!-- POZIOME MENU -->
 	<?php
-	if($panel_poziomo)
+	if($config['panel_poziomo'])
 	{
-	$pozioma_tresc = file_get_contents('pages/'.$PoziomyPanelText);
+	$pozioma_tresc = file_get_contents('pages/'.$config['PoziomyPanelText']);
 	echo '<div id="panel_poziomo">'.$pozioma_tresc.'</div>';
 	}
 	?>
@@ -71,9 +71,9 @@ if(!file_exists('config.php')) {
 	
 	<!-- LEWE MENU -->
 	<?php
-	if($panel_lewo)
+	if($config['panel_lewo'])
 	{
-	$lewa_tresc = file_get_contents('pages/'.$LewyPanelText);
+	$lewa_tresc = file_get_contents('pages/'.$config['LewyPanelText']);
 	echo '<div id="panel_lewo">'.$lewa_tresc.'</div>';
 	}
 	?>
@@ -81,17 +81,17 @@ if(!file_exists('config.php')) {
 
 	<!-- ŚRODKOWE POLE -->
 	<?php
-	$BodyText = file_get_contents('pages/'.$PlikBodyText);
-	$BodyTextType = (!$panel_lewo && !$panel_prawo) ? '_vlong' : ((!$panel_prawo || !$panel_lewo) ? '_long' : '');
+	$BodyText = file_get_contents('pages/'.$config['PlikBodyText']);
+	$BodyTextType = (!$config['panel_lewo'] && !$config['panel_prawo']) ? '_vlong' : ((!$config['panel_prawo'] || !$config['panel_lewo']) ? '_long' : '');
 	echo '<div id="bodytext'.$BodyTextType.'">'.$BodyText.'</div>';
 	?>
 	<!-- ŚRODKOWE POLE KONIEC -->
 
 	<!-- PRAWE MENU -->
 	<?php
-	if($panel_prawo)
+	if($config['panel_prawo'])
 	{
-	$prawa_tresc = file_get_contents('pages/'.$PrawyPanelText);
+	$prawa_tresc = file_get_contents('pages/'.$config['PrawyPanelText']);
 	echo '<div id="panel_prawo">'.$prawa_tresc.'</div>';
 	}
 	?>

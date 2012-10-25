@@ -14,8 +14,8 @@ if(!file_exists('../config.php')) {
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title><?php echo $site_name ?> - <?php echo $lang['PA'] ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
+	<title><?php echo $config['site_name'] ?> - <?php echo $lang['PA'] ?></title>
+	<meta http-equiv="Content-Language" content="<?php echo $config['site_lang'] ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
@@ -36,7 +36,7 @@ if(!file_exists('../config.php')) {
 					<button type="submit" class="ok"><?php echo $lang['LOGIN'] ?></button>
 				</form>
 			</div>
-			<div class="footer">&raquo; <?php echo $site_name ?> | <?php echo $lang['PA'] ?></div>
+			<div class="footer">&raquo; <?php echo $config['site_name'] ?> | <?php echo $lang['PA'] ?></div>
 		</div>
 	</div>
 </div>

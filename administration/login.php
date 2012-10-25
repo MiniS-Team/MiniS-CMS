@@ -14,8 +14,8 @@ if(!file_exists('../config.php')) {
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title><?php echo $site_name ?> - <?php echo $lang['COM'] ?></title>
-	<meta http-equiv="Content-Language" content="<?php echo $site_lang ?>">
+	<title><?php echo $config['site_name'] ?> - <?php echo $lang['COM'] ?></title>
+	<meta http-equiv="Content-Language" content="<?php echo $config['site_lang'] ?>">
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 	<meta name="generator" content="<?php echo $lang['CMS'] ?> by M. Kucharskov & MiniS Team">	
 
@@ -31,9 +31,9 @@ $pass=$_POST['pass'];
 session_name('MiniSLogin');
 session_start();
 
-if ($login == $my_login && $pass == $my_pass) {
+if ($login == $config['my_login'] && $pass == $config['my_pass']) {
 	header("Refresh:3; url=admin_panel.php");
-	$_SESSION['username'] = $my_login;
+	$_SESSION['username'] = $config['my_login'];
 	echo '<div id="space"></div><div id="log_box"><div id="log_ok">'.$lang['LOGIN_OK'].'<br>'.$lang['LOGIN_WAIT'].'</div></div>';
 } else {
 	header("Refresh:3; url=index.php");

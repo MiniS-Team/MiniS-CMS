@@ -840,25 +840,22 @@ echo "<div class='tab'>
 		if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
 		if(!$error) {
 			$config_done = 1;
-			$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n";
+			$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
 			foreach($dane as $k => $v)
 			{
 				$v = escape($v);
-				$configString .= "\${$k} = '{$v}';\n";
+				$configString .= "'{$k}' => '{$v}',\n";
 			}
 			$configString .= 
-			"\$style_name = 'white.css';
-
-/* Panele */
-\$panel_lewo = 1;							//Lewy panel: 1- Włączone 0 - Wyłączone
-\$panel_prawo = 1;							//Prawy panel: 1- Włączone 0 - Wyłączone
-\$panel_poziomo = 0;							//Poziomy panel: 1- Włączone 0 - Wyłączone
-
-/* Zawartość paneli */
-\$PlikBodyText = '0.txt';					//Nazwa pliku otwierana w głównym oknie (z folderu \"pages\")
-\$LewyPanelText = 'lewe_menu.txt';			//Nazwa pliku otwierana w lewym panelu (z folderu \"pages\")
-\$PrawyPanelText = 'prawe_menu.txt';			//Nazwa pliku otwierana w prawym panelu (z folderu \"pages\")
-\$PoziomyPanelText = 'poziome_menu.txt';		//Nazwa pliku otwierana w poziomym panelu (z folderu \"pages\")
+			"'style_name' => 'white.css',
+'panel_lewo' => 1,
+'panel_prawo' => 1,
+'panel_poziomo' => 0,
+'PlikBodyText' => '0.txt',
+'LewyPanelText' => 'lewe_menu.txt',
+'PrawyPanelText' => 'prawe_menu.txt',
+'PoziomyPanelText' => 'poziome_menu.txt'
+);
 @ini_set('allow_url_fopen', 1);
 ?>";
 			file_put_contents("config.php", $configString);
