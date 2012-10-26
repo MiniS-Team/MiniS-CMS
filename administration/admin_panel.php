@@ -110,13 +110,44 @@ if(!$_SESSION['username'])
 				<?php
 				if (!$_GET['settings']) {
 				} else if ($_GET['settings'] == "admin") {
-				$styles = scandir('../css');
-				$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
 				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$error = array();
 					$dane = $_POST;
 					if(!$dane['my_login']) $error[] = $lang['CONFIG_NO_LOGIN'];
 					if(!$dane['my_pass']) $error[] = $lang['CONFIG_NO_PASS'];
+					if(!$error) {
+						$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
+						foreach($dane as $k => $v) {
+							$v = escape($v);
+							$configString .= "'{$k}' => '{$v}',\n";
+						}
+						$configString .= ");
+@ini_set('allow_url_fopen', 1);
+?>";
+						file_put_contents("../config.php", $configString);
+						echo "<div id='info_hide'><div class='n_ok'><p>".$lang['INSTAL_LANG_1']."</p></div></div>";
+					} else {
+							echo "<div id='info_hide'><div class='n_error'><p>{$lang['CONFIG_ERRORS']}</p></div><ul>";
+						foreach($error as $err) {
+							echo "<li>{$err}</li>";
+						}
+							echo "</ul></div>";
+					}
+				}
+				echo "
+				<form action='admin_panel.php?settings=admin' method='post'>
+				<div class='left' style='width: 35%;'>
+				<label>{$lang['CONFIG_LOGIN']}: </label><input type='text' class='input text' name='my_login' value='{$dane['my_login']}' required><br><br>
+				<label>{$lang['CONFIG_PASS']}: </label><input type='password' class='input text' name='my_pass' required><br><br>
+				</div>
+				<div class='right' style='width: 55%;'></div>
+				<div class='clear'></div>
+				<button type='submit'>".$lang['ET_ZAP']."</button>
+				</form>";
+				} else if ($_GET['settings'] == "page") {
+				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+					$error = array();
+					$dane = $_POST;
 					if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
 					if(!$dane['site_lang']) $error[] = $lang['CONFIG_NO_SITE_LANG'];
 					if(!$error) {
@@ -125,54 +156,72 @@ if(!$_SESSION['username'])
 							$v = escape($v);
 							$configString .= "'{$k}' => '{$v}',\n";
 						}
-						$configString .= 
-						"'style_name' => 'white.css',
-'panel_lewo' => 1,
-'panel_prawo' => 1,
-'panel_poziomo' => 0,
-'PlikBodyText' => '0.txt',
-'LewyPanelText' => 'lewe_menu.txt',
-'PrawyPanelText' => 'prawe_menu.txt',
-'PoziomyPanelText' => 'poziome_menu.txt'
-);
+						$configString .= ");
 @ini_set('allow_url_fopen', 1);
 ?>";
 						file_put_contents("../config.php", $configString);
 						echo "<div id='info_hide'><div class='n_ok'><p>".$lang['INSTAL_LANG_1']."</p></div></div>";
 					} else {
-							echo "<div id='info_hide'><div class='n_error'><p>{$lang['CONFIG_ERRORS']}</p></div></div><ul>";
+							echo "<div id='info_hide'><div class='n_error'><p>{$lang['CONFIG_ERRORS']}</p></div><ul>";
 						foreach($error as $err) {
 							echo "<li>{$err}</li>";
 						}
-							echo "</ul>";
+							echo "</ul></div>";
 					}
 				}
 				echo "
 				<form action='admin_panel.php?settings=admin' method='post'>
 				<div class='left' style='width: 35%;'>
-				<label>{$lang['CONFIG_LOGIN']}: </label><input type='text' class='input text' name='my_login' value='{$dane['my_login']}' required><br><br>
-				<label>{$lang['CONFIG_PASS']}: </label><input type='password' class='input text' name='my_pass' required><br><br>
 				<label>{$lang['CONFIG_SITE_NAME']}: </label><input type='text' class='input text' name='site_name' value='{$dane['site_name']}' required><br><br>
 				<label>{$lang['CONFIG_SITE_LANG']}: </label><input type='text' class='input text' name='site_lang' value='".(($dane['site_lang']) ? $dane['site_lang'] : $lang['CODE'])."'><br><br>
+				<label>{$lang['CONFIG_SITE_GSV']}: </label><input type='text' class='input text' name='site_gsv' value='{$dane['site_gsv']}'><br><br>
 				</div>
 				<div class='right' style='width: 55%;'>
 				<label>{$lang['CONFIG_SITE_KEYWORDS']}: </label><input type='text' class='input text' name='site_keywords' value='{$dane['site_keywords']}'><br><br>
 				<label>{$lang['CONFIG_SITE_DESC']}: </label><input type='text' class='input text' name='site_description' value='{$dane['site_description']}'><br><br>
-				<label>{$lang['CONFIG_SITE_GSV']}: </label><input type='text' class='input text' name='site_gsv' value='{$dane['site_gsv']}'><br><br>
+				</div>
+				<div class='clear'></div>
+				<button type='submit'>".$lang['ET_ZAP']."</button>
+				</form>";
+				} else if ($_GET['settings'] == "styles") {
+				$styles = scandir('../css');
+				$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
+				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+					$dane = $_POST;
+					$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
+					foreach($dane as $k => $v) {
+						$v = escape($v);
+						$configString .= "'{$k}' => '{$v}',\n";
+					}
+					$configString .= ");
+@ini_set('allow_url_fopen', 1);
+?>";
+					file_put_contents("../config.php", $configString);
+					echo "<div id='info_hide'><div class='n_ok'><p>".$lang['INSTAL_LANG_1']."</p></div></div>";
+					}
+				echo "
+				<form action='admin_panel.php?settings=admin' method='post'>
+				<div class='left' style='width: 35%;'>
+				<label>{$lang['CONFIG_PLEWO']}: </label><input type='checkbox' name='panel_lewo'><br><br>
+				<label>{$lang['CONFIG_PPRAWO']}: </label><input type='checkbox' name='panel_prawo'><br><br>
+				<label>{$lang['CONFIG_PPOZIOMO']}: </label><input type='checkbox' name='panel_poziomo'><br><br>
 				<label>{$lang['CONFIG_STYLE_NAME']}: </label>
 				<select name='style_name' style='width: 30%'>";
 				foreach ($styles as $styleName)
 				{
 					echo "<option>{$styleName}</option>";
 				}
-				echo "</select></div>
+				echo "</select><br><br>
+				</div>
+				<div class='right' style='width: 55%;'>
+				<label>{$lang['CONFIG_BODY_TEXT']}: </label><input type='text' class='input text' name='PlikBodyText' value='{$dane['PlikBodyText']}'><br><br>
+				<label>{$lang['CONFIG_PLEWO_TEXT']}: </label><input type='text' class='input text' name='LewyPanelText' value='{$dane['LewyPanelText']}'><br><br>
+				<label>{$lang['CONFIG_PPRAWO_TEXT']}: </label><input type='text' class='input text' name='PrawyPanelText' value='{$dane['PrawyPanelText']}'><br><br>
+				<label>{$lang['CONFIG_PPOZIOMO_TEXT']}: </label><input type='text' class='input text' name='PoziomyPanelText' value='{$dane['PoziomyPanelText']}'><br><br>
+				</div>
 				<div class='clear'></div>
 				<button type='submit'>".$lang['ET_ZAP']."</button>
 				</form>";
-				} else if ($_GET['settings'] == "page") {
-					echo "pages";
-				} else if ($_GET['settings'] == "styles") {
-					echo "styles";
 				}
 				?>
 			</div>

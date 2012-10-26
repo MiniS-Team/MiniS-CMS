@@ -80,6 +80,13 @@ $lang['CONFIG_SITE_GSV'] = "Kod Google Site Verification";
 $lang['CONFIG_SITE_DESC'] = "Opis strony";
 $lang['CONFIG_SITE_KEYWORDS'] = "Słowa kluczowe strony (oddzielone przecinkami)";
 $lang['CONFIG_STYLE_NAME'] = "Nazwa stylu";
+$lang['CONFIG_PLEWO'] = "Panel Lewy";
+$lang['CONFIG_PPRAWO'] = "Panel Prawy";
+$lang['CONFIG_PPOZIOMO'] = "Panel Poziomy";
+$lang['CONFIG_BODY_TEXT'] = "Plik strony głównej";
+$lang['CONFIG_PLEWO_TEXT'] = "Plik lewego panelu";
+$lang['CONFIG_PPRAWO_TEXT'] = "Plik prawego panelu";
+$lang['CONFIG_PPOZIOMO_TEXT'] = "Plik poziomego panelu";
 
 $lang['CONFIG_NO_LOGIN'] = 'Wymagany login administratora';
 $lang['CONFIG_NO_PASS'] = 'Wymagane hasło administratora';

@@ -80,6 +80,13 @@ $lang['CONFIG_SITE_GSV'] = "Код Гугль Сайт Верификейшн";
 $lang['CONFIG_SITE_DESC'] = "Описание сайта";
 $lang['CONFIG_SITE_KEYWORDS'] = "Ключевые слова сайта (разделенные запятыми)";
 $lang['CONFIG_STYLE_NAME'] = "Название стиля";
+$lang['CONFIG_PLEWO'] = "Panel Lewy"; //Novembergirl prosze przetłumaczyć
+$lang['CONFIG_PPRAWO'] = "Panel Prawy";
+$lang['CONFIG_PPOZIOMO'] = "Panel Poziomy";
+$lang['CONFIG_BODY_TEXT'] = "Plik strony głównej";
+$lang['CONFIG_PLEWO_TEXT'] = "Plik lewego panelu";
+$lang['CONFIG_PPRAWO_TEXT'] = "Plik prawego panelu";
+$lang['CONFIG_PPOZIOMO_TEXT'] = "Plik poziomego panelu";
 
 $lang['CONFIG_NO_LOGIN'] = 'Administrator login is required';
 $lang['CONFIG_NO_PASS'] = 'Administrator password is required';
