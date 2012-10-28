@@ -79,6 +79,7 @@ $lang['CONFIG_SITE_LANG'] = "Язык содержания сайта (не об
 $lang['CONFIG_SITE_GSV'] = "Код Гугль Сайт Верификейшн";
 $lang['CONFIG_SITE_DESC'] = "Описание сайта";
 $lang['CONFIG_SITE_KEYWORDS'] = "Ключевые слова сайта (разделенные запятыми)";
+$lang['CONFIG_TEMPLATE_NAME'] = "Nazwa szablonu";//Novembergirl prosze przetłumaczyć
 $lang['CONFIG_STYLE_NAME'] = "Название стиля";
 $lang['CONFIG_PLEWO'] = "Panel Lewy"; //Novembergirl prosze przetłumaczyć
 $lang['CONFIG_PPRAWO'] = "Panel Prawy";

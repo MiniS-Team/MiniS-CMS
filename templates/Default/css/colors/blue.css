@@ -1,0 +1,124 @@
+/*
+#
+# Styl kolorystyczny "Blue" dla skryptu MiniS CMS 
+# M. Kucharskov & MiniS Team
+# Korekta: freaks
+# 
+*/
+
+/* --Odnoœniki-- */
+a {
+	color: #2C4083;
+	text-decoration: none;
+} 
+
+a:link {
+	color: #2C4083;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #2C4083;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #2D4DB5;
+	text-decoration: none;
+}
+
+a:active {
+	color: #2D4DB5;
+	text-decoration: none;
+}
+
+body {
+	color: #3356C8;
+	background-color: #5b7be3;
+	background-image: url('../../img/bg_blue.png');
+	background-repeat: repeat-x;
+}
+
+/* --Stylizowane elementy tekstowe-- */
+p.header {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#panel_poziomo ul, #panel_poziomo ul li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#panel_poziomo ul.menu_poziome {
+	text-align: center;
+	border-bottom: 1px solid #001372;
+	padding-bottom: 5px;
+}
+
+#panel_poziomo ul li {
+	display: inline;
+	white-space: nowrap;
+	margin-right: 5px;
+}
+
+#panel_poziomo ul a:link, #panel_poziomo ul a:visited {
+	text-decoration: none;
+	background-color: #445DDE;
+	color: #001372;
+	border: 1px solid #001372;
+	padding: 5px;
+}
+
+#panel_poziomo ul a:hover {
+	background-color: #fff;
+	border-bottom-color: #fff;
+}
+
+/* --DIV'y-- */
+#kontener {
+	border: 3px solid;
+	border-color: #FFFFFF;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	behaviour: url('../../../../js/border-radius.htc');
+	-moz-box-shadow: 0px 0px 25px #000;
+	-webkit-box-shadow: 0px 0px 25px #000;
+	box-shadow: 0px 0px 25px #000;
+	background-color: #d7e0ff;	
+}
+
+#header {
+
+}
+
+#panel_lewo {
+
+}
+
+#panel_prawo {
+
+}
+
+#panel_poziomo {
+
+}
+
+#bodytext {
+	width: 540px;
+	min-height: 450px;
+	margin: 0 auto;
+	padding: 10px;
+	float: left;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#footer {
+
+}

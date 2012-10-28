@@ -79,6 +79,7 @@ $lang['CONFIG_SITE_LANG'] = "Site content language (doesn't mean system language
 $lang['CONFIG_SITE_GSV'] = "Google Site Verification code";
 $lang['CONFIG_SITE_DESC'] = "Site description";
 $lang['CONFIG_SITE_KEYWORDS'] = "Keywords (separated by commas)";
+$lang['CONFIG_TEMPLATE_NAME'] = "Template name";
 $lang['CONFIG_STYLE_NAME'] = "Style name";
 $lang['CONFIG_PLEWO'] = "Left Panel";
 $lang['CONFIG_PPRAWO'] = "Right Panel";

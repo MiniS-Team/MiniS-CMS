@@ -847,7 +847,8 @@ echo "<div class='tab'>
 				$configString .= "'{$k}' => '{$v}',\n";
 			}
 			$configString .= 
-			"'style_name' => 'white.css',
+			"'template_name' => 'Default',
+'style_name' => 'white.css',
 'panel_lewo' => 1,
 'panel_prawo' => 1,
 'panel_poziomo' => 0,

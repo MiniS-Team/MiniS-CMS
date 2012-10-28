@@ -1,0 +1,88 @@
+/*
+#
+# Styl uk³adu dla skryptu MiniS CMS 
+# M. Kucharskov & MiniS Team
+# 
+# Niektóre opcje uk³adu znajduj¹ siê w stylach kolorystycznych!
+*/
+
+body {
+	text-align: center;
+}
+
+/* --DIV'y-- */
+#kontener {
+	width: 870px;
+	margin: 0 auto;
+	text-align: left;
+	font-family: Tahoma;
+	font-size: 13px;
+}
+
+#header {
+	text-align: center;
+}
+
+#panel_lewo {
+	width: 130px;
+	padding: 10px;
+	float: left;
+	overflow: hidden;
+}
+
+#panel_prawo {
+	width: 130px;
+	padding: 10px;
+	float: right;
+	overflow: hidden;
+}
+
+#panel_poziomo {
+	min-height: 20px;
+	padding: 10px;
+	overflow: hidden;
+	text-align: center;
+}
+
+#bodytext {
+	width: 540px;
+	min-height: 450px;
+	margin: 0 auto;
+	padding: 10px;
+	float: left;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#bodytext_long {
+	width: 700px;
+	min-height: 450px;
+	margin: 0 auto;
+	padding: 10px;
+	float: left;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#bodytext_vlong {
+	min-height: 450px;
+	margin: 0 auto;
+	padding: 10px;
+	float: left;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#footer {
+	clear: both;
+	width: 100%;
+	min-height: 20px;
+	font-size: 11px;
+	font-family: Arial;
+	text-align: right;
+}
+
+/* --CBA.pl footer OFF-- */
+.cbalink {
+	display: none;
+}

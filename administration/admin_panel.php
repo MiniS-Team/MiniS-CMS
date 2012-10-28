@@ -184,8 +184,10 @@ if(!$_SESSION['username'])
 				<button type='submit'>".$lang['ET_ZAP']."</button>
 				</form>";
 				} else if ($_GET['settings'] == "styles") {
-				$styles = scandir('../css');
-				$styles = array_diff($styles, array('base.css', 'install.css', '.', '..'));
+				$templates = scandir('../templates');
+				$templates = array_diff($templates, array('.', '..', 'index.php'));
+				$styles = scandir('../templates/'.$config['template_name'].'/css/colors');
+				$styles = array_diff($styles, array('.', '..'));
 				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$dane = $_POST;
 					$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
@@ -205,8 +207,15 @@ if(!$_SESSION['username'])
 				<label>{$lang['CONFIG_PLEWO']}: </label><input type='checkbox' name='panel_lewo'><br><br>
 				<label>{$lang['CONFIG_PPRAWO']}: </label><input type='checkbox' name='panel_prawo'><br><br>
 				<label>{$lang['CONFIG_PPOZIOMO']}: </label><input type='checkbox' name='panel_poziomo'><br><br>
+				<label>{$lang['CONFIG_TEMPLATE_NAME']}: </label>
+				<select name='template_name' style='width: 50%'>";
+				foreach ($templates as $templateName)
+				{
+					echo "<option>{$templateName}</option>";
+				}
+				echo "</select><br><br>
 				<label>{$lang['CONFIG_STYLE_NAME']}: </label>
-				<select name='style_name' style='width: 30%'>";
+				<select name='style_name' style='width: 50%'>";
 				foreach ($styles as $styleName)
 				{
 					echo "<option>{$styleName}</option>";
