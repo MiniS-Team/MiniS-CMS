@@ -15,17 +15,17 @@ body {
 
 /* --Odnoœniki-- */
 a {
-	color: #CCCCCC;
+	color: #EEEEEE;
 	text-decoration: none;
 } 
 
 a:link {
-	color: #CCCCCC;
+	color: #EEEEEE;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #CCCCCC;
+	color: #EEEEEE;
 	text-decoration: none;
 }
 
@@ -44,6 +44,7 @@ a:active {
 	background-image: url("../../images/header_blue.png");
 	border-bottom: 1px dashed #000000;
 	text-transform: uppercase;
+	text-align: center;
 	font-family: Verdana;
 	font-weight: bold;
 	font-size: 13px;
@@ -54,6 +55,12 @@ a:active {
 	background-color: #333333;
 	border: 1px solid #1D1D1D;
     border-radius: 0px 0px 7px 7px;
+	text-align: left;
+}
+
+.box_lmenu ul {
+	padding-left: 15px;
+	margin: 3px;
 }
 
 .menu_poziome a:hover {
@@ -104,6 +111,7 @@ a:active {
 	min-height: 500px;
 	border: 1px solid #1D1D1D;
     border-radius: 0px 0px 7px 7px;
+	text-align: left;
 }
 
 #body_long {
@@ -111,6 +119,7 @@ a:active {
 	min-height: 500px;
 	border: 1px solid #1D1D1D;
     border-radius: 0px 0px 7px 7px;
+	text-align: left;
 }
 
 #top {

@@ -30,11 +30,12 @@ body {
 }
 
 #body {
-	width: 810px;
+	width: 800px;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 	float: left;
 	overflow: hidden;
+	padding: 3px;
 }
 
 #body_long {
@@ -54,14 +55,16 @@ body {
 }
 
 .header {
-    	height: 45px;
-    	padding-top: 23px;
-	margin-top: 0;
+    height: 45px;
+    padding-top: 23px;
+	margin-top: 0px;
+	margin-bottom: 5px;
 }
 
 .box_lmenu {
 	padding-bottom: 10px;
 	margin-bottom: 10px;
+	padding: 3px;
 }
 
 /* --CBA.pl footer OFF-- */
