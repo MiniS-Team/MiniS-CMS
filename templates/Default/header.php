@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="templates/Default/css/base.css">
 	<link rel="stylesheet" type="text/css" href="templates/Default/css/colors/<?php echo $config['style_name'] ?>">
 	
-	<script type="text/javascript" src="js/JQuery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('a.menu').click(function() {
