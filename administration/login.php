@@ -25,8 +25,8 @@ if(!file_exists('../config.php')) {
 
 <?php
 
-$login=$_POST['user'];
-$pass=$_POST['pass'];
+$login = $_POST['user'];
+$pass = hash('sha512', $_POST['pass']);
 
 session_name('MiniSLogin');
 session_start();

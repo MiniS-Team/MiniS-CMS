@@ -10,8 +10,7 @@ if(!file_exists('../config.php')) {
 	require '../config.php';
 }
 
-function escape($string)
-{
+function escape($string) {
 	return ((get_magic_quotes_gpc()) ? $string : addslashes($string));
 }
 
@@ -119,6 +118,9 @@ if(!$_SESSION['username'])
 					if(!$error) {
 						$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
 						foreach($dane as $k => $v) {
+							if ($k == "my_pass") {
+								$v = hash('sha512', $v);
+							}
 							$v = escape($v);
 							$configString .= "'{$k}' => '{$v}',\n";
 						}
