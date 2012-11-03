@@ -1,2 +1,5 @@
 <p class="header">Lorem ipsum...</p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum metus ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur sodales enim et tellus condimentum laoreet ut id orci. Nunc elementum varius tempor. Proin viverra, felis sed scelerisque gravida, risus eros imperdiet sem, id pharetra nulla mi faucibus dui. Etiam sed ante eget nibh accumsan facilisis nec tempus risus. Sed sit amet lacinia erat. Suspendisse consectetur porta orci, commodo dignissim lorem mollis non. 
+<font color="green">Lorem ipsum dolor sit amet,</font><font color="blue">consectetur adipiscing elit.</font> <font color="red">Integer fermentum metus ipsum.</font><br>
+<b>Cum sociis natoque penatibus et magnis dis parturient montes,</b> <u>nascetur ridiculus mus.</u> <i>Curabitur sodales enim et tellus condimentum laoreet ut id orci.</i><br>
+<center>Nunc elementum varius tempor.</center><br>
+Proin viverra, felis sed scelerisque gravida, risus eros imperdiet sem, id pharetra nulla mi faucibus dui. Etiam sed ante eget nibh accumsan facilisis nec tempus risus. Sed sit amet lacinia erat. Suspendisse consectetur porta orci, commodo dignissim lorem mollis non.
