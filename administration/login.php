@@ -9,6 +9,12 @@ if(!file_exists('../config.php')) {
 } else {
 	require '../config.php';
 }
+
+$login = $_POST['user'];
+$pass = hash('sha512', $_POST['pass']);
+
+session_name('MiniSLogin');
+session_start();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
@@ -24,13 +30,6 @@ if(!file_exists('../config.php')) {
 <body>
 
 <?php
-
-$login = $_POST['user'];
-$pass = hash('sha512', $_POST['pass']);
-
-session_name('MiniSLogin');
-session_start();
-
 if ($login == $config['my_login'] && $pass == $config['my_pass']) {
 	header("Refresh:3; url=admin_panel.php");
 	$_SESSION['username'] = $config['my_login'];
