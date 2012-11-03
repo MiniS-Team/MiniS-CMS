@@ -108,6 +108,7 @@ if(!$_SESSION['username'])
 					<a href='admin_panel.php?settings=styles'><p class='button'><?php echo $lang['CONFIG_CAT3'] ?></p></a>
 				</div>
 				<?php
+				$dane = $config;
 				if (!$_GET['settings']) {
 				} else if ($_GET['settings'] == "admin") {
 				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
