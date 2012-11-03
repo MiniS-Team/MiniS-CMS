@@ -110,7 +110,7 @@ if(!$_SESSION['username'])
 				$dane = $config;
 				if (!$_GET['settings']) {
 				} else if ($_GET['settings'] == "admin") {
-				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+				if ($_GET['settings'] == "admin" && $_SERVER['REQUEST_METHOD'] == 'POST') {
 					$error = array();
 					$dane = $_POST;
 					if(!$dane['my_login']) $error[] = $lang['CONFIG_NO_LOGIN'];
@@ -148,7 +148,7 @@ if(!$_SESSION['username'])
 				<button type='submit'>".$lang['ET_ZAP']."</button>
 				</form>";
 				} else if ($_GET['settings'] == "page") {
-				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+				if ($_GET['settings'] == "page" && $_SERVER['REQUEST_METHOD'] == 'POST') {
 					$error = array();
 					$dane = $_POST;
 					if(!$dane['site_name']) $error[] = $lang['CONFIG_NO_SITE_NAME'];
@@ -173,7 +173,7 @@ if(!$_SESSION['username'])
 					}
 				}
 				echo "
-				<form action='admin_panel.php?settings=admin' method='post'>
+				<form action='admin_panel.php?settings=page' method='post'>
 				<div class='left' style='width: 35%;'>
 				<label>{$lang['CONFIG_SITE_NAME']}: </label><input type='text' class='input text' name='site_name' value='{$dane['site_name']}' required><br><br>
 				<label>{$lang['CONFIG_SITE_LANG']}: </label><input type='text' class='input text' name='site_lang' value='".(($dane['site_lang']) ? $dane['site_lang'] : $lang['CODE'])."'><br><br>
@@ -191,7 +191,7 @@ if(!$_SESSION['username'])
 				$templates = array_diff($templates, array('.', '..', 'index.php'));
 				$styles = scandir('../templates/'.$config['template_name'].'/css/colors');
 				$styles = array_diff($styles, array('.', '..'));
-				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+				if ($_GET['settings'] == "styles" && $_SERVER['REQUEST_METHOD'] == 'POST') {
 					$dane = $_POST;
 					$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
 					foreach($dane as $k => $v) {
@@ -205,7 +205,7 @@ if(!$_SESSION['username'])
 					echo "<div id='info_hide'><div class='n_ok'><p>".$lang['INSTAL_LANG_1']."</p></div></div>";
 					}
 				echo "
-				<form action='admin_panel.php?settings=admin' method='post'>
+				<form action='admin_panel.php?settings=styles' method='post'>
 				<div class='left' style='width: 35%;'>
 				<label>{$lang['CONFIG_PLEWO']}: </label><input type='checkbox' name='panel_lewo'><br><br>
 				<label>{$lang['CONFIG_PPRAWO']}: </label><input type='checkbox' name='panel_prawo'><br><br>
