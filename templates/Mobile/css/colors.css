@@ -1,0 +1,78 @@
+/*
+#
+# Styl kolorystyczny dla skryptu MiniS CMS (Mobile)
+# M. Kucharskov & MiniS Team
+# 
+*/
+
+body {
+	color: #000000;
+	background-color: #000000;
+	text-align: center;
+	font-family: Arial;
+	font-size: 15px;
+}
+
+/* --Odnoœniki-- */
+a {
+	color: #2C4083;
+	text-decoration: none;
+} 
+
+a:link {
+	color: #2C4083;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #2C4083;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #2D4DB5;
+	text-decoration: none;
+}
+
+a:active {
+	color: #2D4DB5;
+	text-decoration: none;
+}
+
+/* Elementy formatowane */
+p.header {
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 2px dashed #000000;
+}
+
+/* DIV'y */
+#top {
+	text-align: center;
+	background-color: #DDDDDD;
+	border-radius: 5px;
+}
+
+#menu_top {
+	border-radius: 5px;
+	background-color: #EEEEEE;
+	box-shadow: inset 1px 1px 1px #000000, 1px 1px 1px #FFFFFF;
+}
+
+#box {
+	border-radius: 5px;
+	background-color: #EEEEEE;
+	box-shadow: inset 1px 1px 1px #000000, 1px 1px 1px #FFFFFF;
+}
+
+#body {
+	text-align: left;
+	border-radius: 5px;
+	background-color: #EEEEEE;
+	box-shadow: inset 1px 1px 1px #000000, 1px 1px 1px #FFFFFF;
+}
+
+a#mobile {
+	text-align: center;
+	font-size: 10px;
+}
