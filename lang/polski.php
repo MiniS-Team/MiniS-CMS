@@ -50,6 +50,8 @@ $lang['ET_DEL'] ="Usuń";
 $lang['ET_WYM'] ="(wymagane)";
 $lang['ET_BD_NAZW'] = "Nazwa pliku może zawierać jedynie: litery, cyfry oraz znak '_'!";
 $lang['ET_BD_NO_NAZW'] = "Podaj nazwę pliku!";
+$lang['SITE_MOBILE'] = "Wersja Mobilna";
+$lang['SITE_FULL'] = "Pełna Wersja";
 
 $lang['INSTAL_1'] = "Licencja";
 $lang['INSTAL_2'] = "Wybór języka";

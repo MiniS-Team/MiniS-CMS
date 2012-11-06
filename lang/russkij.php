@@ -50,6 +50,8 @@ $lang['ET_DEL'] ="Удалить";
 $lang['ET_WYM'] ="(требуется)";
 $lang['ET_BD_NAZW'] = "Название файла может содержать только: буквы, цифры а также симбол '_'!";
 $lang['ET_BD_NO_NAZW'] = "Ввести название файла!";
+$lang['SITE_MOBILE'] = "Wersja Mobilna";//Novembergirl prosze przetłumaczyć
+$lang['SITE_FULL'] = "Pełna Wersja";
 
 $lang['INSTAL_1'] = "Лицензия";
 $lang['INSTAL_2'] = "Выбор языка";

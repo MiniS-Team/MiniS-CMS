@@ -50,6 +50,8 @@ $lang['ET_DEL'] ="Delete";
 $lang['ET_WYM'] ="(required)";
 $lang['ET_BD_NAZW'] = "The file name can contain only: letters, numbers and '_' character!";
 $lang['ET_BD_NO_NAZW'] = "Enter the file name!";
+$lang['SITE_MOBILE'] = "Mobile Version";
+$lang['SITE_FULL'] = "Full Version";
 
 $lang['INSTAL_1'] = "License";
 $lang['INSTAL_2'] = "Select a language";
