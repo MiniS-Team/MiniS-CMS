@@ -5,7 +5,7 @@ http://Kucharskov.cba.pl/MiniS_CMS/
 
 **MiniS CMS:** M.Kucharskov & MiniS Team  
 **Repozytorium:** Cysioland  
-**Style & Korekta:** Spritex1 & freaks  
+**Style & Korekta:** freaks  
 **Styl panelu administratora:** kilab  
 **Tłumaczenia:** M. Kucharskov, novembergirl & Cysioland  
 
