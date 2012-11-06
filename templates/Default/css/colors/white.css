@@ -83,6 +83,12 @@ p.header {
 	border-bottom-color: #fff;
 }
 
+#mobile {
+	float: right;
+	padding: 3px;
+	font-size: 10px;
+}
+
 /* --DIV'y-- */
 #kontener {
 	border: 3px solid;
