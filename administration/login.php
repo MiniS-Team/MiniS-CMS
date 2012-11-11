@@ -15,6 +15,14 @@ $pass = hash('sha512', $_POST['pass']);
 
 session_name('MiniSLogin');
 session_start();
+
+if ($login == $config['my_login'] && $pass == $config['my_pass']) {
+    header("Refresh:3; url=admin_panel.php");
+}
+else
+{
+    header("Refresh:3; url=index.php");
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd">
@@ -31,11 +39,10 @@ session_start();
 
 <?php
 if ($login == $config['my_login'] && $pass == $config['my_pass']) {
-	header("Refresh:3; url=admin_panel.php");
 	$_SESSION['username'] = $config['my_login'];
 	echo '<div id="space"></div><div id="log_box"><div id="log_ok">'.$lang['LOGIN_OK'].'<br>'.$lang['LOGIN_WAIT'].'</div></div>';
 } else {
-	header("Refresh:3; url=index.php");
+	
 	echo '<div id="space"></div><div id="log_box"><div id="log_no">'.$lang['LOGIN_NO'].'</div></div>';
 }
 ?>
