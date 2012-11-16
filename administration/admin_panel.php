@@ -124,6 +124,20 @@ if(!$_SESSION['username'])
 							$v = escape($v);
 							$configString .= "'{$k}' => '{$v}',\n";
 						}
+						$configString .= "'site_name' => '{$config[site_name]}',\n";
+						$configString .= "'site_lang' => '{$config[site_lang]}',\n";
+						$configString .= "'site_gsv' => '{$config[site_gsv]}',\n";
+						$configString .= "'site_keywords' => '{$config[site_keywords]}',\n";
+						$configString .= "'site_description' => '{$config[site_description]}',\n";
+						$configString .= "'template_name' => '{$config[template_name]}',\n";
+						$configString .= "'style_name' => '{$config[style_name]}',\n";
+						$configString .= "'panel_lewo' => ".$config[panel_lewo].",\n";
+						$configString .= "'panel_prawo' => ".$config[panel_prawo].",\n";
+						$configString .= "'panel_poziomo' => ".$config[panel_poziomo].",\n";
+						$configString .= "'PlikBodyText' => '{$config[PlikBodyText]}',\n";
+						$configString .= "'LewyPanelText' => '{$config[LewyPanelText]}',\n";
+						$configString .= "'PrawyPanelText' => '{$config[PrawyPanelText]}',\n";
+						$configString .= "'PoziomyPanelText' => '{$config[PoziomyPanelText]}',\n";
 						$configString .= ");
 @ini_set('allow_url_fopen', 1);
 ?>";
@@ -155,10 +169,21 @@ if(!$_SESSION['username'])
 					if(!$dane['site_lang']) $error[] = $lang['CONFIG_NO_SITE_LANG'];
 					if(!$error) {
 						$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
+						$configString .= "'my_login' => '{$config[my_login]}',\n";
+						$configString .= "'my_pass' => '{$config[my_pass]}',\n";
 						foreach($dane as $k => $v) {
 							$v = escape($v);
 							$configString .= "'{$k}' => '{$v}',\n";
 						}
+						$configString .= "'template_name' => '{$config[template_name]}',\n";
+						$configString .= "'style_name' => '{$config[style_name]}',\n";
+						$configString .= "'panel_lewo' => ".$config[panel_lewo].",\n";
+						$configString .= "'panel_prawo' => ".$config[panel_prawo].",\n";
+						$configString .= "'panel_poziomo' => ".$config[panel_poziomo].",\n";
+						$configString .= "'PlikBodyText' => '{$config[PlikBodyText]}',\n";
+						$configString .= "'LewyPanelText' => '{$config[LewyPanelText]}',\n";
+						$configString .= "'PrawyPanelText' => '{$config[PrawyPanelText]}',\n";
+						$configString .= "'PoziomyPanelText' => '{$config[PoziomyPanelText]}',\n";
 						$configString .= ");
 @ini_set('allow_url_fopen', 1);
 ?>";
@@ -194,10 +219,23 @@ if(!$_SESSION['username'])
 				if ($_GET['settings'] == "styles" && $_SERVER['REQUEST_METHOD'] == 'POST') {
 					$dane = $_POST;
 					$configString = "<?php\nrequire('lang/{$lang['NAME']}.php');\n\$config = array(\n";
+					$configString .= "'my_login' => '{$config[my_login]}',\n";
+					$configString .= "'my_pass' => '{$config[my_pass]}',\n";
+					$configString .= "'site_name' => '{$config[site_name]}',\n";
+					$configString .= "'site_lang' => '{$config[site_lang]}',\n";
+					$configString .= "'site_gsv' => '{$config[site_gsv]}',\n";
+					$configString .= "'site_keywords' => '{$config[site_keywords]}',\n";
+					$configString .= "'site_description' => '{$config[site_description]}',\n";
 					foreach($dane as $k => $v) {
+						if ($k == "panel_lewo" || $k == "panel_prawo" || $k == "panel_poziomo") {
+							if ($v === "on") {
+								$v = "1";
+							}
+						}
 						$v = escape($v);
 						$configString .= "'{$k}' => '{$v}',\n";
 					}
+
 					$configString .= ");
 @ini_set('allow_url_fopen', 1);
 ?>";
