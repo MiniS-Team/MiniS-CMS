@@ -241,6 +241,7 @@ if(!$_SESSION['username'])
 						}
 						$v = escape($v);
 						$configString .= "'{$k}' => '{$v}',\n";
+                                                $config[$k] = $v;
 					}
                                         $config['panel_lewo'] = $dane['panel_lewo'];
                                         $config['panel_prawo'] = $dane['panel_prawo'];
@@ -262,14 +263,14 @@ if(!$_SESSION['username'])
 				<select name='template_name' style='width: 50%'>";
 				foreach ($templates as $templateName)
 				{
-					echo "<option>{$templateName}</option>";
+					echo "<option" . (($config['template_name'] === $templateName) ? ' selected=\'selected\'' : '' ) . ">{$templateName}</option>";
 				}
 				echo "</select><br><br>
 				<label>{$lang['CONFIG_STYLE_NAME']}: </label>
 				<select name='style_name' style='width: 50%'>";
 				foreach ($styles as $styleName)
 				{
-					echo "<option>{$styleName}</option>";
+					echo "<option" . (($config['style_name'] === $styleName) ? ' selected=\'selected\'' : '' ) . ">{$styleName}</option>";
 				}
 				echo "</select><br><br>
 				</div>
