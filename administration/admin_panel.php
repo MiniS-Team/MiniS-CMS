@@ -257,8 +257,8 @@ if(!$_SESSION['username'])
 				<form action='admin_panel.php?settings=styles' method='post'>
 				<div class='left' style='width: 35%;'>
 				<label>{$lang['CONFIG_PLEWO']}: </label><input type='checkbox' name='panel_lewo'". ((!isset($config['panel_lewo'])) ? '' : ' checked=\'checked\'') . "><br><br>
-				<label>{$lang['CONFIG_PPRAWO']}: </label><input type='checkbox' name='panel_prawo'". ((!isset($config['panel_lewo'])) ? '' : ' checked=\'checked\'') . "><br><br>
-				<label>{$lang['CONFIG_PPOZIOMO']}: </label><input type='checkbox' name='panel_poziomo'". ((!isset($config['panel_lewo'])) ? '' : ' checked=\'checked\'') . "><br><br>
+				<label>{$lang['CONFIG_PPRAWO']}: </label><input type='checkbox' name='panel_prawo'". ((!isset($config['panel_prawo'])) ? '' : ' checked=\'checked\'') . "><br><br>
+				<label>{$lang['CONFIG_PPOZIOMO']}: </label><input type='checkbox' name='panel_poziomo'". ((!isset($config['panel_poziomo'])) ? '' : ' checked=\'checked\'') . "><br><br>
 				<label>{$lang['CONFIG_TEMPLATE_NAME']}: </label>
 				<select name='template_name' style='width: 50%'>";
 				foreach ($templates as $templateName)
