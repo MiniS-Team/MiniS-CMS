@@ -17,11 +17,9 @@ session_name('MiniSLogin');
 session_start();
 
 if ($login == $config['my_login'] && $pass == $config['my_pass']) {
-    header("Refresh:3; url=admin_panel.php");
-}
-else
-{
-    header("Refresh:3; url=index.php");
+    header("Refresh:2; url=admin_panel.php");
+} else {
+    header("Refresh:2; url=index.php");
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
