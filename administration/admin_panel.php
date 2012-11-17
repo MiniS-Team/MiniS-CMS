@@ -17,6 +17,13 @@ function escape($string) {
 session_name('MiniSLogin');
 session_start();
 
+/**
+ * Wyłączenie cache tam, gdzie niepotrzebne
+ */
+header('Pragma: no-cache');
+header('Expires: Thu, 1 Jan 1970 00:00:01 GMT');
+header('Cache-control: no-cache, must-revalidate');
+
 if(!$_SESSION['username'])
 {
 	header("Location: index.php");
@@ -235,6 +242,9 @@ if(!$_SESSION['username'])
 						$v = escape($v);
 						$configString .= "'{$k}' => '{$v}',\n";
 					}
+                                        $config['panel_lewo'] = $dane['panel_lewo'];
+                                        $config['panel_prawo'] = $dane['panel_prawo'];
+                                        $config['panel_poziomo'] = $dane['panel_poziomo'];
 
 					$configString .= ");
 @ini_set('allow_url_fopen', 1);
@@ -245,9 +255,9 @@ if(!$_SESSION['username'])
 				echo "
 				<form action='admin_panel.php?settings=styles' method='post'>
 				<div class='left' style='width: 35%;'>
-				<label>{$lang['CONFIG_PLEWO']}: </label><input type='checkbox' name='panel_lewo'><br><br>
-				<label>{$lang['CONFIG_PPRAWO']}: </label><input type='checkbox' name='panel_prawo'><br><br>
-				<label>{$lang['CONFIG_PPOZIOMO']}: </label><input type='checkbox' name='panel_poziomo'><br><br>
+				<label>{$lang['CONFIG_PLEWO']}: </label><input type='checkbox' name='panel_lewo'". ((!isset($config['panel_lewo'])) ? '' : ' checked=\'checked\'') . "><br><br>
+				<label>{$lang['CONFIG_PPRAWO']}: </label><input type='checkbox' name='panel_prawo'". ((!isset($config['panel_lewo'])) ? '' : ' checked=\'checked\'') . "><br><br>
+				<label>{$lang['CONFIG_PPOZIOMO']}: </label><input type='checkbox' name='panel_poziomo'". ((!isset($config['panel_lewo'])) ? '' : ' checked=\'checked\'') . "><br><br>
 				<label>{$lang['CONFIG_TEMPLATE_NAME']}: </label>
 				<select name='template_name' style='width: 50%'>";
 				foreach ($templates as $templateName)
