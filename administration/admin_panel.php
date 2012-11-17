@@ -241,11 +241,11 @@ if(!$_SESSION['username'])
 						}
 						$v = escape($v);
 						$configString .= "'{$k}' => '{$v}',\n";
-                                                $config[$k] = $v;
+                        $config[$k] = $v;
 					}
-                                        $config['panel_lewo'] = $dane['panel_lewo'];
-                                        $config['panel_prawo'] = $dane['panel_prawo'];
-                                        $config['panel_poziomo'] = $dane['panel_poziomo'];
+                    $config['panel_lewo'] = $dane['panel_lewo'];
+                    $config['panel_prawo'] = $dane['panel_prawo'];
+                    $config['panel_poziomo'] = $dane['panel_poziomo'];
 
 					$configString .= ");
 @ini_set('allow_url_fopen', 1);
