@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 ob_start();
 
@@ -852,7 +852,7 @@ echo "<div class='tab'>
 'style_name' => 'white.css',
 'panel_lewo' => 1,
 'panel_prawo' => 1,
-'panel_poziomo' => 1,
+'panel_poziomo' => 0,
 'PlikBodyText' => '0.txt',
 'LewyPanelText' => 'lewe_menu.txt',
 'PrawyPanelText' => 'prawe_menu.txt',
@@ -922,12 +922,12 @@ echo "
 	header("Location: index.php");
 	exit;
 }
-
-ob_end_flush();
-
 ?>
 
 		</div>
 	</div>
 </body>
 </html>
+<?php
+ob_end_flush();
+?>
